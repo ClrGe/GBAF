@@ -43,9 +43,14 @@ h2:hover, h3:hover, a:hover, h1 {
 	color:black;
 }
 
-h2, h3 {
+h2, h3, h1 {
 	font-size: xx-large;
 }
+
+h1 {
+	padding-top : 60px;
+}
+	
 p, .listeActeurs{
 	font-size: larger;
 	text-align:justify;
