@@ -24,5 +24,4 @@
       <a href="commenter.html"> Poster un commentaire </a>
     </main>
    <?php include("footer.php");?>
-  </body>
 </html>
