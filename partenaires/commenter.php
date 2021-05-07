@@ -10,6 +10,9 @@
       <a href="index.php"><img src="../img/logo.png" alt="GBAF"></a>
       <h1>Poster un commentaire</h1>
     </header>
+       <?php 
+            include("database.php");
+      ?>
     <main>
       <form action="" method="post">
         <label for="commentaire"></label>
