@@ -40,53 +40,6 @@
             include("listePartenaires.php");
         ?>
       
-      <section>
-        <h1 class="nosPart">Les partenaires du GBAF</h1>
-        <div class="logo">
-          <img src="img/formation_co.png">
-        </div>
-        <div class="text-block"> 
-          <p>
-            Formation & Co est une association française présente sur tout le territoire.
-            Son but est de permettre à des personnes issues de tout milieu de devenir entrepreneur 
-            grâce à un crédit et un accompagnement professionnel et personnalisé.
-          </p>
-        </div>
-        <a>Cliquez ici pour en savoir plus</a>
-        <div class="logo">
-          <img src="img/protectpeople.png">
-        </div>
-        <div class="text-block"> 
-          <p>
-            En appliquant le principe édifié par la Sécurité Sociale française en 1945,
-            Protect People finance la solidarité nationale
-            pour permettre à chacun de bénéficier d’une protection sociale.<br>
-          </p>
-        </div>
-        <a>Cliquez ici pour en savoir plus</a>  
-        <div class="logo">
-          <img src="img/Dsa_france.png">
-        </div>
-        <div class="text-block"> 
-          <p>
-            DSA-France accélère la croissance du territoire 
-            et s’engage avec les collectivités territoriales pour
-            accompagner les entreprises dans les étapes clés de leur évolution.
-          </p>
-        </div>
-        <a>Cliquez ici pour en savoir plus</a>
-        <div class="logo">
-          <a href="acteurs.php?acteurs=4"><img src="img/CDE.png"></a>
-        </div>
-        <div class="text-block"> 
-          <p>
-            La Chambre Des Entrepreneurs (CDE) accompagne les entreprises
-            dans leurs démarches de formations<br />
-          </p>
-        </div>
-        <a>Cliquez ici pour en savoir plus</a>
-        <div class="push"></div>
-      </section>
     </main>
     <footer>
       <ul>
