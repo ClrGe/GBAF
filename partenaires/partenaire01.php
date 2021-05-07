@@ -2,18 +2,9 @@
 
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <title>GBAF - Formation&co</title>
-    <link rel="stylesheet" href="../css/style.css">
-  </head>
-
-  <body class="accueil">
-    <header>
-      <img src="../img/logo.png" alt="GBAF" class="gbaf">
-      <h1>Nos partenaires</h1>   
-    </header>
+  
      <?php 
+            include("header.php");
             include("database.php");
       ?>
     <main>
@@ -32,11 +23,6 @@
       </p>
       <a href="commenter.html"> Poster un commentaire </a>
     </main>
-    <footer>
-      <ul>
-         <li><a href="../legal.html">Mentions légales</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-      </ul>
-    </footer>
+   <?php include("footer.php");?>
   </body>
 </html>
