@@ -36,12 +36,8 @@
       </section>
       
         <?php 
-            include("getArticle.php");
-            include("listeArticles.php");
-           
-            $vues = $bdd->query('SELECT * FROM vues');
-
-            while ($donnees = $vues->fetch()){
+            include("database.php");
+            include("listePartenaires.php");
         ?>
       
       <section>
