@@ -13,6 +13,9 @@
       <img src="../img/logo.png" alt="GBAF" class="gbaf">
       <h1>Nos partenaires</h1>
     </header>
+     <?php 
+            include("database.php");
+      ?>
     <main>
       <img src="../img/CDE.png" alt="CDE" class="logo">
       <h3>Chambre Des Entrepreneurs</h3>
