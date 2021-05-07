@@ -19,7 +19,7 @@
                 
                 <div class="champs">
                     <label><b>Identifiant</b><br /></label>
-                    <input type="text" placeholder="Entrer votre nom d'utilisateur" name="identifiant" required><br />
+                    <input type="text" placeholder="Saisissez votre nom d'utilisateur" name="identifiant" required><br />
                 </div>
                 <label><b>Mot de passe</b></label><br />
                 <input type="password" placeholder="Saisissez votre mot de passe" name="password" required><br />
