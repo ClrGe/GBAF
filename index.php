@@ -34,6 +34,16 @@
           C’est aussi un interlocuteur privilégié des pouvoirs publics pour représenter ce secteur d'activité.
         </p>
       </section>
+      
+        <?php 
+            include("getArticle.php");
+            include("listeArticles.php");
+           
+            $vues = $bdd->query('SELECT * FROM vues');
+
+            while ($donnees = $vues->fetch()){
+        ?>
+      
       <section>
         <h1 class="nosPart">Les partenaires du GBAF</h1>
         <div class="logo">
