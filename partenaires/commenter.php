@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <title>GBAF - Nouveau Commentaire</title>
-    <link rel="stylesheet" href="../css/style.css">
-  </head>
-  <body>
-    <header>
-      <a href="index.php"><img src="../img/logo.png" alt="GBAF"></a>
-      <h1>Poster un commentaire</h1>
-    </header>
+  
+  <?php include("header.php");?>
       
     <main>
       <form action="" method="post">
@@ -37,10 +29,6 @@
     <footer>
       <a>Mentions légales</a>
       <a>Contact</a>
-    </footer>
-    <ul>
-        <li><a href="../legal.html">Mentions légales</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-  </footer>
+  <?php include("footer.php");?>
 </body>
 </html>
