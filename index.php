@@ -15,4 +15,3 @@ include("listePartenaires.php");
 include("footer.php"); 
 ?>
     
-</html>
