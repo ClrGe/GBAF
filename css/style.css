@@ -1,4 +1,10 @@
 
+html {
+	background-color: rgb(212, 23, 23);
+	height: 100%;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 body {
 	background-color: rgb(212, 23, 23);
 	width: 85%;
@@ -8,12 +14,6 @@ body {
 	padding-top: 100px;
 	padding-left: 20px;
 	padding-right: 20px;
-}
-
-html {
-	background-color: rgb(212, 23, 23);
-	height: 100%;
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 header, .accueil{
