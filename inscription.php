@@ -19,13 +19,14 @@
                 <div class="champs">
                     <label><b>Mot de passe</b></label><br />
                     <input type="password" placeholder="Votre mot de passe..." name="password" required><br />
+                    <label for="checkbox"><input type="checkbox" id="checkbox">Afficher le mot de passe</label><br />
                 </div>
                 <div class="champs">
                     <label><b>Adresse Email</b><br /></label>
                     <input type="text" placeholder="Votre adresse email..." name="email" required><br />
-                    <br /><input type="submit" id='submit' value='Créer un compte' ><br />
+                    <br /><a class="inscription" href="redirection.php"><input type="submit" id='submit' value='Créer un compte' ><br /></a>
                 </div>
-            </form>
+            </form>         
         </div>
     </body>
 </html>

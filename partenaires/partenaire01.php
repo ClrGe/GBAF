@@ -28,7 +28,7 @@
         Nous collaborons avec des personnes talentueuses et motivées.<br>
         Vous n’avez pas de diplômes ? Ce n’est pas un problème pour nous ! Nos financements s’adressent à tous.
       </p>
-      <a href="commenter.html"> Poster un commentaire </a>
+      <a href="commenter.php"> Poster un commentaire </a>
     </main>
     <footer>
       <ul>

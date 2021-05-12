@@ -1,9 +1,8 @@
-<!--affiche liste des partenaires sur la page d'accueil -->
-<?php include("database.php"); ?> 
-<section>
+    <?php include("database.php"); ?> 
+      <section>
         <h1 class="nosPart">Les partenaires du GBAF</h1>
         <div class="logo">
-        <a href="partenaires/partenaire01.php"><img src="img/formation_co.png"></a>  
+          <a href="partenaires/partenaire01.php"><img src="img/formation_co.png"></a>  
         </div>
         <div class="text-block"> 
           <p>
@@ -13,7 +12,7 @@
           </p>
         </div>
         <div class="logo">
-        <a href="partenaires/partenaire02.php"><img src="img/protectpeople.png"></a>  
+          <a href="partenaires/partenaire02.php"><img src="img/protectpeople.png"></a>  
         </div>
         <div class="text-block"> 
           <p>
@@ -23,7 +22,7 @@
           </p>
         </div>
         <div class="logo">
-        <a href="partenaires/partenaire03.php"><img src="img/Dsa_france.png"></a>
+          <a href="partenaires/partenaire03.php"><img src="img/Dsa_france.png"></a>
         </div>
         <div class="text-block"> 
           <p>
@@ -33,15 +32,14 @@
           </p>
         </div>
         <div class="logo">
-        <a href="partenaires/partenaire04.php"><img src="img/CDE.png"></a>        </div>
+          <a href="partenaires/partenaire04.php"><img src="img/CDE.png"></a>
+        </div>
         <div class="text-block"> 
           <p>
             La Chambre Des Entrepreneurs (CDE) accompagne les entreprises
             dans leurs démarches de formations<br />
           </p>
-        </div>
-        
-        <div class="push"></div>
+        </div>     
       </section>
     </main>
-
+    

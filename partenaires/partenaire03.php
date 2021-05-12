@@ -22,7 +22,7 @@
         Notre philosophie : s’adapter à chaque entreprise.
         Nous les accompagnons pour voir plus grand et plus loin et proposons des solutions de financement adaptées à chaque étape de la vie des entreprises
       </p>
-      <a href="commenter.html"> Poster un commentaire </a>
+      <a href="commenter.php"> Poster un commentaire </a>
     </main>
     <footer>
       <ul>
