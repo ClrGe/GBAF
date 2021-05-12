@@ -1,31 +1,27 @@
-<!-- page de connexion pour accéder à l'extranet -->
-
 <!DOCTYPE html>
 <html lang="fr">
-<html>
     <head>
        <meta charset="utf-8">
        <title>Page de connexion - GBAF</title>
         <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
     </head>
     <body>
-        <div id="connexion">
-            <header>
-                <img src="img/logo.png" alt="GBAF">
-            </header>
-            
-            <form class="formConnexion">
-                <h1>SE CONNECTER</h1>
-                
+        <header>
+            <img src="img/logo.png" alt="GBAF">
+        </header>
+        <div id="connexion">                   
+            <form class="formConnexion" action="connexion.php" method="post">
+                <h1 class="white">SE CONNECTER</h1>  
                 <div class="champs">
                     <label><b>Identifiant</b><br /></label>
-                    <input type="text" placeholder="Saisissez votre nom d'utilisateur" name="identifiant" required><br />
+                    <input type="text" placeholder="Saisissez votre nom d'utilisateur" name="username" required><br />
                 </div>
-                <label><b>Mot de passe</b></label><br />
-                <input type="password" placeholder="Saisissez votre mot de passe" name="password" required><br />
-
-                <br /><input type="submit" id='submit' value='Connexion' >
-            
+                <div class="champs">
+                    <label><b>Mot de passe</b></label><br />
+                    <input type="password" placeholder="Saisissez votre mot de passe" name="password" required><br />
+                    <br /><input type="submit" id='submit' value='Connexion' ><br />
+                </div>
+                    <br /><a class="inscription"> Pas encore inscrit ? Cliquez ici pour <strong>créer un compte</strong></a>
             </form>
         </div>
     </body>

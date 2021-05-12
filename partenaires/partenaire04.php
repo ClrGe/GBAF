@@ -2,11 +2,18 @@
 
 <!DOCTYPE html>
 <html lang="fr">
-  
-     <?php 
-            include("header.php");
-            include("database.php");
-      ?>
+  <head>
+    <meta charset="utf-8">
+    <title>GBAF - Chambres des Entrepreneurs</title>
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+
+  <body class="accueil">
+    <header>
+      <img src="../img/logo.png" alt="GBAF" class="gbaf">
+      <h1>Nos partenaires</h1>
+      <a href="../index.php" class="accueilLink"> Accueil </a> 
+    </header>
     <main>
       <img src="../img/CDE.png" alt="CDE" class="logo">
       <h3>Chambre Des Entrepreneurs</h3>
@@ -16,6 +23,11 @@
       </p>
       <a href="commenter.html"> Poster un commentaire </a>
     </main>
-     <?php include("footer.php");?>
+     <footer>
+      <ul>
+        <li><a href="../legal.html">Mentions légales</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+     </footer>
     </body>
 </html>

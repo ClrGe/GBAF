@@ -1,5 +1,3 @@
-<!-- Permet de se connecter à la bdd -->
-
 <?php
 try
 {
