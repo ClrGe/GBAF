@@ -13,9 +13,9 @@
       <img src="../img/logo.png" alt="GBAF" class="gbaf">
       <h2>Nos partenaires</h2>
       <a href="../index.php" class="accueilLink"> Accueil </a> 
+      <img src="../img/formation_co.png" alt="Formation&Co" class="logo">
     </header>
     <main>
-      <img src="../img/formation_co.png" alt="Formation&Co" class="logo">
       <p>
         Formation&co est une association française présente sur tout le territoire. <br>
         Nous proposons à des personnes issues de tout milieu de devenir entrepreneur grâce

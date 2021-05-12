@@ -12,10 +12,10 @@
   <header>
     <img src="../img/logo.png" alt="GBAF" class="gbaf">
     <h1>Nos partenaires</h1>
-    <a href="../index.php" class="accueilLink"> Accueil </a>    
+    <a href="../index.php" class="accueilLink"> Accueil </a>
+    <img src="../img/protectpeople.png" alt="ProtectPeople" class="logo">    
   </header>
   <main>
-    <img src="../img/protectpeople.png" alt="ProtectPeople" class="logo">
     <p>
       Protect People finance la solidarité nationale.
       Nous appliquons le principe édifié par la Sécurité sociale française en 1945 : permettre à chacun de bénéficier d’une protection sociale.

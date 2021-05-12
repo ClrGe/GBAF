@@ -12,10 +12,10 @@
     <header>
       <img src="../img/logo.png" alt="GBAF" class="gbaf">
       <h1>Nos partenaires</h1>
-      <a href="../index.php" class="accueilLink"> Accueil </a>    
+      <a href="../index.php" class="accueilLink"> Accueil </a>
+      <img src="../img/Dsa_france.png" alt="DSAFrance" class="logo">    
     </header>
     <main>
-      <img src="../img/Dsa_france.png" alt="DSAFrance" class="logo">
       <p>
         Dsa France accélère la croissance du territoire et s’engage avec les collectivités territoriales.
         Nous accompagnons les entreprises dans les étapes clés de leur évolution.

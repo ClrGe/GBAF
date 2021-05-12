@@ -12,10 +12,10 @@
     <header>
       <img src="../img/logo.png" alt="GBAF" class="gbaf">
       <h1>Nos partenaires</h1>
-      <a href="../index.php" class="accueilLink"> Accueil </a> 
+      <a href="../index.php" class="accueilLink"> Accueil </a>
+      <img src="../img/CDE.png" alt="CDE" class="logo"> 
     </header>
     <main>
-      <img src="../img/CDE.png" alt="CDE" class="logo">
       <h3>Chambre Des Entrepreneurs</h3>
       <p>
         La CDE (Chambre Des Entrepreneurs) accompagne les entreprises dans leurs démarches de formation. 
