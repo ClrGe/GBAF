@@ -1,80 +1,167 @@
-html, #logo {
-	background-color: white;
+/** GENERAL SETTINGS **/
 
-	height: 100%;
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-#pub {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;	
-}
-body, .intro {
-	margin: auto;
-	position: relative;
+body {
+    margin: auto;
 	text-align: justify;
+    font-size: larger;
 	padding-left: 20px;
 	padding-right: 20px;
 }
 
-.intro, h4 {
-	padding-top: 50px;
+p, li {
+    margin: 25px;
 }
 
+#title {
+	display: block;
+	padding-left: 150px;
+}
 
- main, #connexion {
-	background-color: rgba(150, 0, 0, 0.8);
+h1, h2, h3, h4, .formConnexion, .accueilLink, .inscription, .white {
+    text-align: center;
+}
 
+h1 {
+	padding: 100px;
+}
+
+main, #connexion {
 	padding-bottom: 20px;
 }
 
-.logo{
-	display: inline-block;
-	width: 65%;
-	padding-left: 10%;
-	padding-bottom: 50px;
+main {
+	padding-top: 100px;
 }
 
-header, h1, h2, h3, a, .formConnexion, a, .accueilLink, .inscription, h4{
-	text-align: center;
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-h3, a, h2:hover, li, .white, .champs, h4 {
-	color:white;
-}
-
-h2:hover, h3:hover, a:hover, h1:hover, li:hover {
-	color:black;
-}
-
-h2, h3, h1 {
-	font-size: xx-large;
+.nosPart, .center {
+	padding-top : 50px;
 }
 
 .nosPart {
-	padding-top : 150px;
+	padding-bottom : 50px;
 }
-	
-p, .listeActeurs{
-	font-size: larger;
-	text-align:justify;
+
+.border, .gbaf {
+	border-bottom: 1px solid black;
+}
+
+.black {
+	padding-top : 0px;
+}
+
+.partenaires{
+	padding: 20px;
 }
 
 .listeActeurs {
-	margin: 100px;
 	font-weight: bold;
+	text-align: center;
 }
 
-li, p{
-	margin:25px;
+.suite {
+	text-align: right;
+	font-style: italic;
+}
+
+
+/** HEADER / FOOTER / NAVIGATION **/
+
+#header {
+    position: fixed;
+	width: 100%;
+}
+
+.settings, .black, .legal {
+	font-size: small;
+	list-style-type: none;
+}
+
+.settings, .black {
+	text-align: right;
+	float: right;
+}
+
+.legal {
+	text-align: start;
+	float:right;
 }
 
 footer {
-	color: black;
 	width: 100%;
 	bottom: 0px;
 }
+
+/** COLORS **/
+
+p, a, .white, .champs, .nosPart, h2, h1 {
+    color: white;
+}
+
+h3, a, .accueilLink, .navUser, .settings, .black, h3:hover, a:hover, h1:hover, li:hover, .footer, .legal, .suite {
+    color: black;
+}
+
+.services, li, h2 {
+	color:rgba(150, 0, 0, 0.8);
+}
+
+html, textarea, #header, .logo, .gbaf {
+    background-color: white;
+}
+
+#connexion, .partenaires, h2, h1, .nosPart {
+	background-color: rgba(150, 0, 0, 0.8);
+}
+
+
+/** IMAGES **/
+
+
+img.gbaf {
+	position:fixed;
+	top: 0px;
+	left: 20px;
+	text-align: left;
+	height: 120px;
+	width: auto;
+}
+
+.pub, .pub-partenaire {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.logo {
+	width: 250px;
+	height: auto;
+
+}
+
+.flex {
+	display: flex;
+	flex-direction: column;
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/** CONNECT / COMMENT **/
+
 
 #connexion {
 	width: 50%;
@@ -92,75 +179,59 @@ textarea {
 	display: block;
 	width: 100%;
 	height: 250px;
-	background-color: rgb(250, 247, 243);	
 }
 
-.settings, .black{
-	color: black;
-	text-align: right;
+.comment {
+	padding-top: 100px;
 }
 
-/**
- * Responsive breakpoints
- */
- @media only screen and (max-width: 600px){ /* Smartphones */
-    nav, #connexion, main, body, .fo{
-        display: block;
-        max-height: initial;
-        text-align: center;
-    }
 
-	.formConnexion{
+/** RESPONSIVE **/
+
+* {
+	box-sizing: border-box;
+  }
+
+@media only screen and (max-width: 600px){ /* Smartphones */
+    
+	html, body, img.logo, li, ul, #connexion {
 		width: 100%;
-		padding: auto;
-		margin: auto;
 	}
-    nav .profile{
-        margin-top: .5rem;
-        text-align: center;
-    }
-    .partner{
-        display: block;
-    }
-    #actions{
-        display: block;
-        text-align: center;
-    }
-    #grades{
-        margin-top: .5rem;
-        justify-content: space-between;
-    }
-    #user fieldset.inline{
-        display: block;
-    }
-    #user fieldset.inline div{
-        width: initial;
-    }
-    #user fieldset.inline div:not(:first-child){
-        margin-top: .5rem;
+	
+	html, body{
+		display: block;
+		text-align: justify;
+		margin: auto;
+		padding: auto;
+	}
+
+	img.gbaf {
+		position: inherit;
+	}
+
+	.listeActeurs, ul, li {
+		margin: 0%;
+		padding: 0%;
+		list-style: none;
+	}
+
+	.listeActeurs, ul, li, .accueilLink {
+		text-align: center;
+	}
+  }
+
+@media (min-width:992px) {
+    .desktop-only {
+        display:block !important;
     }
 }
-@media only screen and (min-width: 80rem){
-    main{
-        margin: 1rem auto;
-        max-width: 100%;
+ 
+@media (max-width: 600px) {
+    .mobile-only {
+        display:block !important;
     }
-    .alert{
-        margin: 1rem auto;
-        padding: 1rem;
-        background: lightblue;
-        border-radius: 1rem;
-        max-width: 80rem;
+ 
+    .desktop-only {
+        display:none !important;
     }
 }
-
-.debug{
-    /*display: none;*/
-    margin: 1rem;
-    padding: 1rem;
-    color: gray;
-    background: whitesmoke;
-    font-size: small;
-}
-
-
