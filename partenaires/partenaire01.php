@@ -1,5 +1,3 @@
-<!-- présentation individuelle des partenaires du GBAF-->
-
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -63,8 +61,8 @@
     </main>
     <footer>
       <div class="flex-footer">
-          <div class="button"></i><a href="../contact.html">Contact</a></div>
-          <div class="button"></i><a href="../legal.html">Mentions légales</a></div>
+          <div class="button"><a href="../contact.html">Contact</a></div>
+          <div class="button"><a href="../legal.html">Mentions légales</a></div>
         </div>
     </footer>
   </body>

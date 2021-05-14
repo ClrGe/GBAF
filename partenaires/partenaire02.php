@@ -1,5 +1,3 @@
-<!-- présentation individuelle des partenaires du GBAF-->
-
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -27,7 +25,6 @@
         <p class="partenaires">
           Protect People finance la solidarité nationale.
           Nous appliquons le principe édifié par la Sécurité sociale française en 1945 : permettre à chacun de bénéficier d’une protection sociale.
-          
           Chez Protectpeople, chacun cotise selon ses moyens et reçoit selon ses besoins.
           Proectecpeople est ouvert à tous, sans considération d’âge ou d’état de santé.
           Nous garantissons un accès aux soins et une retraite.
@@ -60,8 +57,8 @@
     </main>
     <footer>
       <div class="flex-footer">
-          <div class="button"></i><a href="../contact.html">Contact</a></div>
-          <div class="button"></i><a href="../legal.html">Mentions légales</a></div>
+          <div class="button"><a href="../contact.html">Contact</a></div>
+          <div class="button"><a href="../legal.html">Mentions légales</a></div>
         </div>
     </footer>
   </body>

@@ -15,7 +15,6 @@
           <li class="black"><a class="black" href="../connexion.php"><i></i>Deconnexion</a></li>
       </ul>
         <a href="../index.php"><img src="../img/logo.png" alt="GBAF" class="gbaf"></a>
-        <h1 class="desktop-only">Groupement Banque-Assurance Français</h1>
     </header>
     <main>
       <h4> Donnez votre avis sur cet organisme et les services proposés en postant un commentaire !</h4> <br />
@@ -27,8 +26,8 @@
     </main>
     <footer>
       <div class="flex-footer">
-          <div class="button"></i><a href="../contact.html">Contact</a></div>
-          <div class="button"></i><a href="../legal.html">Mentions légales</a></div>
+          <div class="button"><a href="../contact.html">Contact</a></div>
+          <div class="button"><a href="../legal.html">Mentions légales</a></div>
         </div>
     </footer>
 </html>

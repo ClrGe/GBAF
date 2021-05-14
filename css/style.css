@@ -36,7 +36,7 @@ h1 {
 	padding: 70px;
 }
 
-main {
+main, #commentaire {
 	padding-top: 100px;
 }
 
@@ -118,7 +118,7 @@ h3, a, .accueilLink, .navUser, .settings, .black, h3:hover, a:hover, h1:hover, l
 	color:rgba(150, 0, 0, 0.8);
 }
 
-#connexion, .partenaires, h2, h1, .nosPart, .parametres {
+#connexion, .partenaires, h2, h1, .nosPart, .parametres{
 	background-color: rgba(150, 0, 0, 0.8);
 }
 
@@ -278,12 +278,11 @@ textarea {
 	html, body, #header{
 		display: block;
 		text-align: justify;
-		margin: auto;
-		padding: auto;
+
 	}
 	.settings, .black{
 		display: block;
-		text-align: center;
+		padding-right:10px;
 	}
 	.listeActeurs, ul, li, .flex-banques, h1 {
 		margin: 0%;
@@ -324,12 +323,7 @@ textarea {
 	html, body{
 		display: block;
 		text-align: justify;
-		margin: auto;
-		padding: auto;
-	}
 
-	img.gbaf {
-		position: inherit;
 	}
 
 	.listeActeurs, ul, li, .flex-banques, h1 {
