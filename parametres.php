@@ -17,7 +17,7 @@
                 <div class="champs">
                     <label><b>Adresse Email</b><br /></label>
                        <input type="text" placeholder="Votre adresse email..." name="email" required><br />
-                       <br /><a class="inscription" href="redirection.php"><input type="submit" id='submit' value='Modifier' ></a>
+                       <br /><input type="submit" id='submit' value='Modifier' >
                        <a href="index.php">Revenir à l'accueil</a>
                 </div>
             </form>         

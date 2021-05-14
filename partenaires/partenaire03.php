@@ -22,13 +22,15 @@
     <main>
       <section>
         <img src="../img/Dsa_france.png" alt="DSAFrance">
-        <p class="partenaires">
+        <h5 class="partenaires">
           Dsa France accélère la croissance du territoire et s’engage avec les collectivités territoriales.
+        </h5>
+        <p class="partenaires">
           Nous accompagnons les entreprises dans les étapes clés de leur évolution.
           Notre philosophie : s’adapter à chaque entreprise.
           Nous les accompagnons pour voir plus grand et plus loin et proposons des solutions de financement adaptées à chaque étape de la vie des entreprises
         </p>
-        <img src="../img/business-03.jpg" class="pub">
+        <img src="../img/business-03.jpg" alt="pub" class="pub">
       </section>
       <section class="comment-section">
         <div class="flex-container">

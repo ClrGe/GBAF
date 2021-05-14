@@ -3,7 +3,7 @@
           <h2 class="nosPart">Les partenaires du GBAF</h2>
           <div class="partenaires flex-container">
             <div>
-              <a href="partenaires/partenaire01.php"><img src="img/formation_co.png" class="logo"></a>
+              <a href="partenaires/partenaire01.php"><img src="img/formation_co.png" alt="partenaire01" class="logo"></a>
             </div>
             <div>
               <p>
@@ -16,7 +16,7 @@
           </div> 
           <div class="partenaires flex-container">
             <div>
-              <a href="partenaires/partenaire02.php"><img src="img/protectpeople.png" class="logo"></a>
+              <a href="partenaires/partenaire02.php"><img src="img/protectpeople.png" alt="partenaire02" class="logo"></a>
             </div>
             <div>
               <p>
@@ -29,7 +29,7 @@
           </div>
           <div class="partenaires flex-container">
             <div> 
-              <a href="partenaires/partenaire03.php"><img src="img/Dsa_france.png" class="logo"></a>
+              <a href="partenaires/partenaire03.php"><img src="img/Dsa_france.png" alt="partenaire03" class="logo"></a>
             </div>
             <div>
               <p>
@@ -42,7 +42,7 @@
           </div>
           <div class="partenaires flex-container">
             <div>
-              <a href="partenaires/partenaire04.php"><img src="img/CDE.png" class="logo"></a>
+              <a href="partenaires/partenaire04.php"><img src="img/CDE.png" alt="partenaire04" class="logo"></a>
             </div>
             <div>  
               <p>

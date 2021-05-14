@@ -22,11 +22,11 @@
     </header>
     <main>
       <section>
-        <img src="../img/business-05.jpg" class="pub">
-        <p class="partenaires">
+        <img src="../img/business-05.jpg" alt="pub" class="pub">
+        <h5 class="partenaires">
           La <strong>CDE</strong> (Chambre Des Entrepreneurs) accompagne les entreprises dans leurs démarches de formation. 
           Son président est élu pour 3 ans par ses pairs, chefs d’entreprises et présidents des CDE.
-        </p>
+        </h5>
       </section>
       <section class="comment-section">
         <div class="flex-container">

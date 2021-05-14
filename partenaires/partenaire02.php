@@ -21,9 +21,11 @@
     </header>
     <main>
       <section>
-        <img src="../img/business-01.jpg" class="pub">    
-        <p class="partenaires">
+        <img src="../img/business-01.jpg" alt="pub" class="pub">    
+        <h5 class="partenaires">
           Protect People finance la solidarité nationale.
+        </h5>
+        <p class="partenaires">
           Nous appliquons le principe édifié par la Sécurité sociale française en 1945 : permettre à chacun de bénéficier d’une protection sociale.
           Chez Protectpeople, chacun cotise selon ses moyens et reçoit selon ses besoins.
           Proectecpeople est ouvert à tous, sans considération d’âge ou d’état de santé.
