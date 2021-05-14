@@ -5,37 +5,25 @@ html {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-body {
-    margin: auto;
+body, p {
 	text-align: justify;
-    font-size: larger;
-	padding-left: 20px;
-	padding-right: 20px;
-}
-
-p, li {
-    margin: 25px;
-}
-
-#title {
-	display: block;
-	padding-left: 150px;
 }
 
 h1, h2, h3, h4, .formConnexion, .accueilLink, .inscription, .white {
     text-align: center;
 }
 
-h1 {
-	padding: 100px;
+h2 {
+	font-size : 32px;
 }
 
-main, #connexion {
-	padding-bottom: 20px;
-}
+/** LAYOUT **/
 
-main {
-	padding-top: 100px;
+
+body, p {
+    margin: auto;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .center {
@@ -44,45 +32,52 @@ main {
 	margin-right: auto;
 }
 
-.nosPart, .center {
-	padding-top : 50px;
+h1 {
+	padding: 70px;
 }
 
-.nosPart {
-	padding-bottom : 50px;
+main {
+	padding-top: 100px;
 }
 
-.border, .gbaf {
-	border-bottom: 1px solid black;
+.pub, .partenaires {
+	padding-top: 20px;
 }
 
-.black {
-	padding-top : 0px;
+.white {
+	padding: 10px;
 }
 
-.partenaires{
-	padding: 20px;
+li {
+    margin: 25px;
 }
 
-.listeActeurs {
-	font-weight: bold;
-	text-align: center;
+#title {
+	display: block;
+	padding-left: 150px;
+}
+
+main, #connexion {
+	padding-bottom: 20px;
 }
 
 .suite {
-	text-align: right;
-	font-style: italic;
+	display: block;
+	margin-left: auto;
+	padding-left: auto;
 }
 
 
 /** HEADER / FOOTER / NAVIGATION **/
 
+
 #header {
     position: fixed;
 	width: 100%;
+	height: 120px;
 }
 
-.settings, .black, .legal {
+.settings, .black {
 	font-size: small;
 	list-style-type: none;
 }
@@ -92,36 +87,43 @@ main {
 	float: right;
 }
 
-.legal {
-	text-align: start;
-	float:right;
+.border, .gbaf {
+	border-bottom: 1px solid black;
 }
 
-footer {
-	width: 100%;
-	bottom: 0px;
-}
 
 /** COLORS **/
 
-p, a, .white, .champs, .nosPart, h2, h1 {
-    color: white;
-}
 
-h3, a, .accueilLink, .navUser, .settings, .black, h3:hover, a:hover, h1:hover, li:hover, .footer, .legal, .suite {
-    color: black;
-}
-
-.services, li, h2 {
-	color:rgba(150, 0, 0, 0.8);
-}
-
-html, textarea, #header, .logo, .gbaf {
+html, textarea, .logo {
     background-color: white;
 }
 
-#connexion, .partenaires, h2, h1, .nosPart {
+#header {
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.white, .formConnexion {
+	background-color: rgba(255, 255, 255, 0);
+}
+p, a, .white, .champs, .nosPart, h2, h1, .comment-title, .inscription {
+    color: white;
+}
+
+h3, a, .accueilLink, .navUser, .settings, .black, h3:hover, a:hover, h1:hover, li, .footer, .legal, .suite, .comment, .button:hover {
+    color: black;
+}
+
+.services, li:hover, h2, .button {
+	color:rgba(150, 0, 0, 0.8);
+}
+
+#connexion, .partenaires, h2, h1, .nosPart, .parametres {
 	background-color: rgba(150, 0, 0, 0.8);
+}
+
+.comment-title {
+	background-color: black;
 }
 
 
@@ -144,14 +146,8 @@ img.gbaf {
 }
 
 .logo {
-	width: 250px;
+	width: 400px;
 	height: auto;
-
-}
-
-.flex {
-	display: flex;
-	flex-direction: column;
 }
 
 img {
@@ -159,6 +155,12 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.banque {
+	width: 150px;
+}
+
+
 
 /** CONNECT / COMMENT **/
 
@@ -181,20 +183,141 @@ textarea {
 	height: 250px;
 }
 
-.comment {
+.comment-section {
 	padding-top: 100px;
+}
+
+.comment-info {
+	font-style: italic;
+	padding-left:25px;
+	padding-top: 25px;
+	font-size: small;
+}
+
+.black {
+	padding-top : 0px;
+}
+
+
+/** ACTEURS / PARTENAIRES **/
+
+
+.nosPart, .center {
+	padding-top : 50px;
+}
+
+.nosPart {
+	padding-bottom : 50px;
+}
+
+.partenaires{
+	padding: 20px;
+}
+
+.listeActeurs {
+	font-weight: bold;
+	text-align: center;
+}
+
+.suite {
+	text-align: right;
+	font-style: italic;
+}
+
+
+/** FLEX **/
+
+
+.flex-container, .flex, .flex-footer, .flex-banques {
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-container, .flex {
+	justify-content: flex-end
+}
+
+.flex-footer {
+	justify-content: center;
+}
+
+.flex-banques {
+	justify-content: space-around;
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+.button {
+	margin: 10px;
 }
 
 
 /** RESPONSIVE **/
 
+
+@media (min-width:992px) {
+    .desktop-only {
+        display:block !important;
+    }
+}
+
 * {
 	box-sizing: border-box;
   }
 
-@media only screen and (max-width: 600px){ /* Smartphones */
+  @media only screen and (max-width: 992px){	 /* Tablets */
+
+	.desktop-only {
+        display:none !important;
+    }
     
-	html, body, img.logo, li, ul, #connexion {
+	header, html, body, img.logo, li, ul, #connexion, .flex-banques, .black {
+		width: 100%;
+	}
+	
+	html, body, #header{
+		display: block;
+		text-align: justify;
+		margin: auto;
+		padding: auto;
+	}
+	.settings, .black{
+		display: block;
+		text-align: center;
+	}
+	.listeActeurs, ul, li, .flex-banques, h1 {
+		margin: 0%;
+		padding: 0%;
+		list-style: none;
+	}
+
+	.listeActeurs, ul, li, .accueilLink {
+		text-align: center;
+	}
+	.flex-banques {
+		flex-direction: column;
+	}
+	h1 {
+		margin-top: 50px;
+	}
+
+	header {
+		padding-bottom: 50px;
+		margin-bottom: 50px;
+	}
+  }
+
+@media only screen and (max-width: 600px){ 	/* Smartphones */
+
+	.mobile-only {
+        display:block !important;
+    }
+ 
+    .desktop-only {
+        display:none !important;
+    }
+    
+	html, body, img.logo, li, ul, #connexion, .flex-banques {
 		width: 100%;
 	}
 	
@@ -209,7 +332,7 @@ textarea {
 		position: inherit;
 	}
 
-	.listeActeurs, ul, li {
+	.listeActeurs, ul, li, .flex-banques, h1 {
 		margin: 0%;
 		padding: 0%;
 		list-style: none;
@@ -218,20 +341,14 @@ textarea {
 	.listeActeurs, ul, li, .accueilLink {
 		text-align: center;
 	}
+
+	.flex-container, .flex-banques {
+		flex-direction: column;
+	}
+
+	h1 {
+		margin-top: 50px;
+	}
   }
 
-@media (min-width:992px) {
-    .desktop-only {
-        display:block !important;
-    }
-}
- 
-@media (max-width: 600px) {
-    .mobile-only {
-        display:block !important;
-    }
- 
-    .desktop-only {
-        display:none !important;
-    }
-}
+  

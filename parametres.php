@@ -3,7 +3,7 @@
 
     <?php include("header.php");?>
         <main>                   
-            <form class="formConnexion" action="parametres.php" method="post">
+            <form class="formConnexion parametres" action="parametres.php" method="post">
                 <h1 class="white">Modifier mon compte</h1>  
                 <div class="champs">
                     <label><b>Nom d'utilisateur</b><br /></label>

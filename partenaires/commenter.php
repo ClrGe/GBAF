@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="../css/style.css">
   </head>
 
-  <body class="accueil">
-    <header id="accueil">
+  <body>
+    <header id="header" class="border">
       <ul class="settings">
           <li class="black"><i></i> <strong> Utilisateur </strong> </li>
           <li class="black"><a class="black" href="../parametres.php"><i></i>Paramètres du compte</a></li>
-          <li class="black"><a class="black" href="../deconnexion.php"><i></i>Deconnexion</a></li>
+          <li class="black"><a class="black" href="../connexion.php"><i></i>Deconnexion</a></li>
       </ul>
         <a href="../index.php"><img src="../img/logo.png" alt="GBAF" class="gbaf"></a>
-        <h1>Groupement Banque-Assurance Français</h1>
+        <h1 class="desktop-only">Groupement Banque-Assurance Français</h1>
     </header>
     <main>
       <h4> Donnez votre avis sur cet organisme et les services proposés en postant un commentaire !</h4> <br />
@@ -25,5 +25,10 @@
         <input type="submit" name="publier" value="Publier">
       </form>
     </main>
-    <?php include("../footer.php");?>
+    <footer>
+      <div class="flex-footer">
+          <div class="button"></i><a href="../contact.html">Contact</a></div>
+          <div class="button"></i><a href="../legal.html">Mentions légales</a></div>
+        </div>
+    </footer>
 </html>

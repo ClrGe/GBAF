@@ -25,7 +25,8 @@
                     <br /><a href=index.php><input type="submit" id='submit' value='Connexion' ></a><br />
                 </div>
                     <br />
-                    <a class="inscription" href="inscription.php"> Pas encore inscrit ? Cliquez ici pour <strong>créer un compte</strong></a>
+                    <a class="inscription" href="inscription.php"> Pas encore inscrit ? Cliquez ici pour <strong>créer un compte</strong></a><br />
+                    <br/><a href="identification.php"> Mot de passe oublié ?</a>
             </form>
         </div>
     </body>

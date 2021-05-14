@@ -40,13 +40,13 @@ CREATE TABLE `commentaires` (
 -- Dumping data for table `commentaires`
 --
 
-INSERT INTO `commentaires` (`id`, `id_user`, `id_partenaires`, `date_com`, `commentaires`) VALUES
-(1, 1, 1, '2021-05-02 14:31:02', 'Excellent service !'),
-(2, 2, 1, '2021-05-02 18:12:58', 'Très beau projet pour rendre accessible la formation professionnelle'),
-(3, 1, 4, '2021-05-03 08:41:02', 'Jamais déçu de ce service'),
-(4, 3, 2, '2021-05-03 10:39:11', 'Très intéressant'),
-(5, 3, 1, '2021-05-03 10:42:09', 'Toujours de bons retours de cette organisme'),
-(6, 4, 1, '2021-05-03 14:01:47', 'Un très beau projet porté par des gens efficaces');
+INSERT INTO `commentaires` (`id`, `id_user`, `id_partenaires`, `auteur`, `date_com`, `commentaires`) VALUES
+(1, 1, 1, 'Fred', '2021-05-02 14:31:02', 'Excellent service !'),
+(2, 2, 1, 'Luc', '2021-05-02 18:12:58', 'Très beau projet pour rendre accessible la formation professionnelle'),
+(3, 1, 4, 'Bullus', '2021-05-03 08:41:02', 'Jamais déçu de ce service'),
+(4, 3, 2, 'Lou', '2021-05-03 10:39:11', 'Très intéressant'),
+(5, 3, 1, 'Raptor', '2021-05-03 10:42:09', 'Toujours de bons retours de cette organisme'),
+(6, 4, 1, 'Jo', '2021-05-03 14:01:47', 'Un très beau projet porté par des gens efficaces');
 
 -- --------------------------------------------------------
 

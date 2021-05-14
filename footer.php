@@ -1,7 +1,7 @@
-  <footer>
-      <ul class="legal">
-        <li class="legal"><a href="legal.php" class="footer">Mentions légales</a></li>
-        <li class="legal"><a href="contact.php" class="footer">Contact</a></li>
-      </ul>
-  </footer>
+    <footer>
+      <div class="flex-footer">
+        <div class="button"></i><a href="contact.html">| Contact |</a></div>
+        <div class="button"></i><a href="legal.html">| Mentions légales |</a></div>
+      </div>
+    </footer>
 </body>
