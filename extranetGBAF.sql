@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5deb2
+-- version 4.9.7deb1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: May 07, 2021 at 10:19 AM
--- Server version: 8.0.23-0ubuntu0.20.04.1
--- PHP Version: 7.4.3
+-- Hôte : localhost:3306
+-- Généré le : mar. 18 mai 2021 à 23:06
+-- Version du serveur :  8.0.25-0ubuntu0.21.04.1
+-- Version de PHP : 7.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,25 +19,26 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `extranetGBAF`
+-- Base de données : `extranetGBAF`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `commentaires`
+-- Structure de la table `commentaires`
 --
 
 CREATE TABLE `commentaires` (
   `id` int NOT NULL,
   `id_user` int NOT NULL,
   `id_partenaires` int NOT NULL,
+  `auteur` varchar(255) NOT NULL,
   `date_com` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `commentaires` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data for table `commentaires`
+-- Déchargement des données de la table `commentaires`
 --
 
 INSERT INTO `commentaires` (`id`, `id_user`, `id_partenaires`, `auteur`, `date_com`, `commentaires`) VALUES
@@ -51,7 +52,7 @@ INSERT INTO `commentaires` (`id`, `id_user`, `id_partenaires`, `auteur`, `date_c
 -- --------------------------------------------------------
 
 --
--- Table structure for table `partenaires`
+-- Structure de la table `partenaires`
 --
 
 CREATE TABLE `partenaires` (
@@ -59,10 +60,10 @@ CREATE TABLE `partenaires` (
   `nom` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `logo` varbinary(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data for table `partenaires`
+-- Déchargement des données de la table `partenaires`
 --
 
 INSERT INTO `partenaires` (`id`, `nom`, `description`, `logo`) VALUES
@@ -74,7 +75,7 @@ INSERT INTO `partenaires` (`id`, `nom`, `description`, `logo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Structure de la table `user`
 --
 
 CREATE TABLE `user` (
@@ -84,49 +85,49 @@ CREATE TABLE `user` (
   `username` varchar(255) NOT NULL,
   `question` varchar(255) NOT NULL,
   `reponse` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `commentaires`
+-- Index pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `partenaires`
+-- Index pour la table `partenaires`
 --
 ALTER TABLE `partenaires`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Index pour la table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`) USING BTREE,
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `commentaires`
+-- AUTO_INCREMENT pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `partenaires`
+-- AUTO_INCREMENT pour la table `partenaires`
 --
 ALTER TABLE `partenaires`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
