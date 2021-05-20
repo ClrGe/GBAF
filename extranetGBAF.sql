@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mar. 18 mai 2021 à 23:06
+-- Généré le : jeu. 20 mai 2021 à 23:34
 -- Version du serveur :  8.0.25-0ubuntu0.21.04.1
 -- Version de PHP : 7.4.16
 
@@ -52,6 +52,21 @@ INSERT INTO `commentaires` (`id`, `id_user`, `id_partenaires`, `auteur`, `date_c
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `images`
+--
+
+CREATE TABLE `images` (
+  `img_id` int NOT NULL,
+  `img_nom` varchar(50) NOT NULL,
+  `img_taille` varchar(25) NOT NULL,
+  `img_type` varchar(25) NOT NULL,
+  `img_desc` varchar(100) NOT NULL,
+  `img_blob` blob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `partenaires`
 --
 
@@ -80,12 +95,32 @@ INSERT INTO `partenaires` (`id`, `nom`, `description`, `logo`) VALUES
 
 CREATE TABLE `user` (
   `id` int NOT NULL,
-  `nom` varchar(255) NOT NULL,
-  `prenom` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `question` varchar(255) NOT NULL,
   `reponse` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `question`, `reponse`) VALUES
+(11, 'Fred', '$2y$10$4KgzGq2Y2S4ES25nks/.POP4XNruPLR85mf1hBQUFGImVpWWiq42C', 'fred@pqp.fr', 'Comment s\'appelait votre premier animal de compagnie ?', 'Bdlb');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `votes`
+--
+
+CREATE TABLE `votes` (
+  `id` int NOT NULL,
+  `id_user` int NOT NULL,
+  `id_partenaires` int NOT NULL,
+  `votes` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Index pour les tables déchargées
@@ -96,6 +131,12 @@ CREATE TABLE `user` (
 --
 ALTER TABLE `commentaires`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`img_id`);
 
 --
 -- Index pour la table `partenaires`
@@ -111,6 +152,12 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `username` (`username`);
 
 --
+-- Index pour la table `votes`
+--
+ALTER TABLE `votes`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -119,6 +166,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `commentaires`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT pour la table `images`
+--
+ALTER TABLE `images`
+  MODIFY `img_id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `partenaires`
@@ -130,6 +183,12 @@ ALTER TABLE `partenaires`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT pour la table `votes`
+--
+ALTER TABLE `votes`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 COMMIT;
 

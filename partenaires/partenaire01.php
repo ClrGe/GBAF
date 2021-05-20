@@ -44,8 +44,8 @@
       
         <div class="flex-container">
           <div class="button"><i class="fas fa-comments"></i><a href="commenter.php" class="button">COMMENTER</a></div>
-          <div class="button"><i class="fas fa-thumbs-up"></i></div>
-          <div class="button"><i class="fas fa-thumbs-down"></i></div>
+          <div class="button"><i class="fas fa-thumbs-up"></i><a href="votes.php"></div>
+          <div class="button"><i class="fas fa-thumbs-down"></i><a href="votes.php"></div>
         </div>
         <h2 class="comment-title"> COMMENTAIRES </h2> 
         <?php include("database.php"); ?>

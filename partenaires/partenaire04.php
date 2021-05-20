@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/ff07e057e1.js" crossorigin="anonymous"></script>
   </head>
-
   <body>
     <header id="header" class="border">
       <div>
