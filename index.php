@@ -43,7 +43,7 @@
               <a href="partenaires/partenaire01.php"><img src="img/formation_co.png" alt="partenaire01" class="logo"></a>
             </div>
             <div>
-              <p class="titre-blanc">
+              <p class="text-white">
                 Formation & Co est une association française présente sur tout le territoire.
                 Son but est de permettre à des personnes issues de tout milieu de devenir entrepreneur
                 grâce à un crédit et un accompagnement professionnel et personnalisé. <br />
@@ -56,7 +56,7 @@
               <a href="partenaires/partenaire02.php"><img src="img/protectpeople.png" alt="partenaire02" class="logo"></a>
             </div>
             <div>
-              <p class="titre-blanc">
+              <p class="text-white">
                 En appliquant le principe édifié par la Sécurité Sociale française en 1945,
                 Protect People finance la solidarité nationale
                 pour permettre à chacun de bénéficier d’une protection sociale.<br>
@@ -69,7 +69,7 @@
               <a href="partenaires/partenaire03.php"><img src="img/Dsa_france.png" alt="partenaire03" class="logo"></a>
             </div>
             <div>
-              <p class="titre-blanc">
+              <p class="text-white">
                 DSA-France accélère la croissance du territoire
                 et s’engage avec les collectivités territoriales pour
                 accompagner les entreprises dans les étapes clés de leur évolution.<br />
@@ -82,7 +82,7 @@
               <a href="partenaires/partenaire04.php"><img src="img/CDE.png" alt="partenaire04" class="logo"></a>
             </div>
             <div>
-              <p class="titre-blanc">
+              <p class="text-white">
                 La Chambre Des Entrepreneurs (CDE) accompagne les entreprises
                 dans leurs démarches de formations<br />
                 <a href="partenaires/partenaire04.php" class="suite">Lire la suite...</a>

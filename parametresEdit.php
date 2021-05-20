@@ -13,15 +13,15 @@
         ));
         $resultat = $req->fetch();
         if ($password == $resultat['password']) {
-            $pass_hache = $password; 
+            $password_hash = $password;
         } else {
-            $pass_hache = password_hash($password, PASSWORD_DEFAULT);
+            $password_hash = password_hash($password, PASSWORD_DEFAULT);
         }
         $req = $bdd->prepare('UPDATE user SET username = :username, password = :password, email = :email, question = :question, reponse = :reponse WHERE id = :id');
         $req->execute(array(
             'id' => $id,
             'username' => $username,
-            'password' => $pass_hache,
+            'password' => $password_hash,
             'email' => $email,
             'question' => $question,
             'reponse' => $reponse
