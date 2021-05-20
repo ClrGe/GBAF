@@ -20,7 +20,7 @@
     <?php
         try
         {
-          $bdd = new PDO('mysql:host=localhost;dbname=extranetGBAF;charset=utf8', 'clerge', 'BullusDansLeBus,576');
+          $bdd = new PDO('mysql:host=localhost;dbname=extranetGBAF;charset=utf8', 'root', '');
         }
         catch(Exception $e)
         {
