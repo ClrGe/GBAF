@@ -1,4 +1,48 @@
-<?php session_start(); ?>
+<?php
+  if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+  }
+  // le visiteur doit être connecté pour accéder au contenu
+  if (!isset($_SESSION['id'])) {
+    header('Location: connexion.php');
+    die();
+  }
+  require "database.php";
+  if(isset($_POST['username'], $_POST['password'], $_POST['email'], $_POST['question'], $_POST['reponse']))
+  {
+      if(empty($_POST['username'])){
+          echo "Veuillez renseigner votre nom d'utilisateur";
+      }
+      elseif(strlen($_POST['pseudo'])>20){
+          echo "Votre nom d'utilisateur ne doit pas dépasser 20 caractères";
+      }
+      elseif(empty($_POST['password'])){
+          echo "Veuillez renseigner votre mot de passe";
+      }
+      elseif(strlen($_POST['password'])>40){
+          echo "Votre mot de passe est trop long";
+      }
+      elseif(strlen($_POST['password'])<6){
+          echo "Votre mot de passe doit comporter au moins 6 caractères";
+      }
+      elseif(empty($_POST['email'])){
+          echo "Veuillez renseigner votre adresse e-mail";
+      }
+      elseif(empty($_POST['reponse'])){
+          echo "Veuillez répondre à la question secrète";
+      }
+      else{
+          $req = $bdd->prepare("INSERT INTO user(username, password, email, question, reponse) VALUES(:username, :password, :email, :question, :reponse)");
+          $req->execute(array(
+              'username' => htmlspecialchars($_POST['username']),
+              'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
+              'email' => htmlspecialchars($_POST['email']),
+              'question' => htmlspecialchars($_POST['question']),
+              'reponse' => htmlspecialchars($_POST['reponse'] )));
+          }
+      $req->closeCursor();
+  }
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -14,15 +58,19 @@
     <?php require "header.php";?>
         <main>
             <form class="formConnexion parametres" action="parametresEdit.php" method="post">
-                <h1 class="white">Modifier mon compte</h1>
+                <h1 class="white">Mon compte</h1>
                 <a href="index.php">Revenir à l'accueil</a>
                 <div class="champs">
                     <label><b>Nom d'utilisateur</b><br /></label>
-                    <input type="text" placeholder="Votre identifiant..." name="username" id="username" required><br />
+                    <br /><h3><?php echo $_SESSION['username'] . ' '; ?></h3><br />
                 </div>
                 <div class="champs">
                     <label><b>Mot de passe</b></label><br />
-                    <input type="password" placeholder="Votre mot de passe..." name="password" id="password" required><br/>
+                    <input type="password" placeholder="Nouveau mot de passe..." name="password" id="password" required><br/>
+                </div>
+                <div class="champs">
+                    <label><b>Confirmer le mot de passe</b></label><br />
+                    <input type="password" placeholder="Confirmez le mot de passe..." name="confirmPassword" required><br />
                 </div>
                 <div class="champs">
                     <label><b>Adresse Email</b><br /></label>
@@ -30,12 +78,7 @@
                 </div>
                 <div class="champs">
                     <label><b>Question secrète</b><br /></label>
-                    <select name="question">
-                        <option>Quel est votre plat préféré ?</option>
-                        <option>Comment s'appelait votre premier animal de compagnie ?</option>
-                        <option>Quelle est votre destination de voyage de rêve ?</option>
-                        <option>Dans quelle ville votre père est-il né ?</option>
-                    </select>
+                    <?php echo $_SESSION['question'] . ' '; ?>
                 </div>
                 <div class="champs">
                     <label><b>Réponse</b><br /></label>

@@ -1,6 +1,5 @@
 /** GENERAL SETTINGS **/
 
-
 html {
     font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -10,29 +9,21 @@ body, p {
 	margin: 0px;
 }
 
-h1, h2, h3, h4, .formConnexion, .accueilLink, .inscription, .white {
+.center, .formConnexion, .accueilLink, .inscription, .white, .title {
     text-align: center;
 }
 
-h2 {
+h2, h3 {
 	font-size : 32px;
 }
 
-
 /** LAYOUT **/
 
-
-body, p {
-    margin: auto;
+.title {
+	padding: 25px;
 }
 
-.center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-h1 {
+.title {
 	padding-top: 70px;
 	padding-bottom: 70px;
 }
@@ -45,17 +36,7 @@ main, #commentaire {
 	padding-top: 20px;
 }
 
-
-
-.white {
-	padding: 10px;
-}
-
-li {
-    margin: 25px;
-}
-
-#title {
+#title, .comment {
 	display: block;
 	padding-left: 150px;
 }
@@ -69,9 +50,7 @@ main, #connexion {
 	margin-left: auto;
 }
 
-
 /** HEADER / FOOTER / NAVIGATION **/
-
 
 #header {
     position: fixed;
@@ -84,7 +63,7 @@ main, #connexion {
 	list-style-type: none;
 }
 
-.settings, .black {
+.settings {
 	text-align: right;
 	float: right;
 }
@@ -93,9 +72,11 @@ main, #connexion {
 	border-bottom: 1px solid black;
 }
 
+.big{
+	font-size: x-large;
+}
 
 /** COLORS **/
-
 
 html, textarea, .logo {
     background-color: white;
@@ -105,10 +86,11 @@ html, textarea, .logo {
 	background-color: rgba(255, 255, 255, 0.9);
 }
 
-.white, .formConnexion {
+.formConnexion {
 	background-color: rgba(255, 255, 255, 0);
 }
-a, .white, .champs, .nosPart, .titre-blanc, .comment-title, .inscription {
+
+a, .white, .champs, .nosPart, .comment-title, .inscription {
     color: white;
 }
 
@@ -120,7 +102,7 @@ h3, a, .accueilLink, .navUser, .settings, .black, h3:hover, a:hover, h1:hover, l
 	color:rgba(150, 0, 0, 0.8);
 }
 
-#connexion, .partenaires, .titre-blanc, .nosPart, .parametres{
+#connexion, .bg-red, .nosPart, .parametres{
 	background-color: rgba(150, 0, 0, 0.8);
 }
 
@@ -128,9 +110,7 @@ h3, a, .accueilLink, .navUser, .settings, .black, h3:hover, a:hover, h1:hover, l
 	background-color: black;
 }
 
-
 /** IMAGES **/
-
 
 img.gbaf {
 	position:fixed;
@@ -161,10 +141,12 @@ img {
 	width: 150px;
 }
 
-
+.settings {
+	padding-left: 15px;
+	padding-right: 15px;
+}
 
 /** CONNECT / COMMENT **/
-
 
 #connexion {
 	width: 50%;
@@ -195,29 +177,24 @@ textarea {
 	font-size: small;
 }
 
-.black {
-	padding-top : 0px;
+.bold {
+	font-size: large;
+	font-weight: bold;
 }
-
 
 /** ACTEURS / PARTENAIRES **/
 
-
-.nosPart, .center {
-	padding-top : 50px;
-}
-
 .nosPart {
-	padding-bottom : 50px;
+	padding: 50px;
 }
 
 .partenaires{
 	padding: 20px;
 }
 
-.listeActeurs {
+.description {
 	font-weight: bold;
-	text-align: center;
+	padding: 40px;
 }
 
 .suite {
@@ -234,7 +211,7 @@ textarea {
 	flex-direction: row;
 }
 
-.flex-container, .flex {
+.flex-container {
 	justify-content: flex-end
 }
 
@@ -312,7 +289,7 @@ textarea {
     .desktop-only {
         display:none;
     }
-    
+
 	html, body, img.logo, li, ul, #connexion, .flex-banques {
 		width: 100%;
 	}
@@ -339,5 +316,3 @@ textarea {
 		margin-top: 50px;
 	}
   }
-
-  

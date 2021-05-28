@@ -1,4 +1,14 @@
-<?php session_start(); ?>
+<?php
+  if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+  }
+  // le visiteur doit être connecté pour accéder au contenu
+  if (!isset($_SESSION['id'])) {
+    header('Location: ../connexion.php');
+    die();
+  }
+  require "../database.php";
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -7,16 +17,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GBAF - Chambres des Entrepreneurs</title>
+    <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/ff07e057e1.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header id="header" class="border">
       <div>
-        <ul class="settings desktop-only">
-          <li class="black"><strong> Utilisateur </strong> </li>
-          <li class="black"><a class="black" href="parametres.php"><i></i>Paramètres du compte</a></li>
-          <li class="black"><a class="black" href="connexion.php"><i></i>Deconnexion</a></li>
+        <ul class="settings">
+          <?php
+          if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
+          ?>
+          <p>
+            <li class="black settings"><strong><?php echo $_SESSION['username'] . ' '; ?></strong> </li>
+            <li class="black settings"><a class="black" href="../parametres.php"><i></i>Paramètres du compte</a></li>
+            <li class="black settings"><a class="black" href="../deconnexion.php"><i></i>Deconnexion</a></li>
+          </p>
+          <?php
+          } else {
+          ?>
+          <p> Veuillez vous connecter </p>
+          <?php
+          }
+          ?>
         </ul>
       </div>
       <a href="../index.php"><img src="../img/logo.png" alt="GBAF" class="gbaf alt-gbaf"></a>
@@ -24,10 +47,10 @@
     <main>
       <section>
         <img src="../img/business-05.jpg" alt="pub" class="pub">
-        <h5 class="partenaires">
+        <p class="bg-red white description">
           La <strong>CDE</strong> (Chambre Des Entrepreneurs) accompagne les entreprises dans leurs démarches de formation. 
           Son président est élu pour 3 ans par ses pairs, chefs d’entreprises et présidents des CDE.
-        </h5>
+        </p>
       </section>
       <section class="comment-section">
         <div class="flex-container">
@@ -49,7 +72,7 @@
       </section>
     </main>
     <footer>
-      <div class="flex-footer">
+      <div class="flex-footer bg-red">
         <div class="button"><a href="../contact.html">Contact</a></div>
         <div class="button"><a href="../legal.html">Mentions légales</a></div>
       </div>

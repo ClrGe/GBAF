@@ -1,4 +1,14 @@
-<?php session_start(); ?>
+<?php
+  if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+  }
+  // le visiteur doit être connecté pour accéder au contenu
+  if (!isset($_SESSION['id'])) {
+    header('Location: ../connexion.php');
+    die();
+  }
+  require "../database.php";
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -7,16 +17,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GBAF - Protect People</title>
+    <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/ff07e057e1.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header id="header" class="border">
       <div>
-        <ul class="settings desktop-only">
-          <li class="black"><strong> Utilisateur </strong> </li>
-          <li class="black"><a class="black" href="parametres.php"><i></i>Paramètres du compte</a></li>
-          <li class="black"><a class="black" href="connexion.php"><i></i>Deconnexion</a></li>
+      <ul class="settings">
+          <?php
+          if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
+          ?>
+          <p>
+            <li class="black settings"><strong><?php echo $_SESSION['username'] . ' '; ?></strong> </li>
+            <li class="black settings"><a class="black" href="../parametres.php"><i></i>Paramètres du compte</a></li>
+            <li class="black settings"><a class="black" href="../deconnexion.php"><i></i>Deconnexion</a></li>
+          </p>
+          <?php
+          } else {
+          ?>
+          <p> Veuillez vous connecter </p>
+          <?php
+          }
+          ?>
         </ul>
       </div>
       <a href="../index.php"><img src="../img/logo.png" alt="GBAF" class="gbaf alt-gbaf"></a>
@@ -24,10 +47,10 @@
     <main>
       <section>
         <img src="../img/business-01.jpg" alt="pub" class="pub">    
-        <h5 class="partenaires">
+        <h3 class="black big center">
           Protect People finance la solidarité nationale.
-        </h5>
-        <p class="partenaires">
+        </h3>
+        <p class="bg-red white description">
           Nous appliquons le principe édifié par la Sécurité sociale française en 1945 : permettre à chacun de bénéficier d’une protection sociale.
           Chez Protectpeople, chacun cotise selon ses moyens et reçoit selon ses besoins.
           Proectecpeople est ouvert à tous, sans considération d’âge ou d’état de santé.
@@ -46,7 +69,7 @@
           <div class="button"><i class="fas fa-thumbs-up"></i></div>
           <div class="button"><i class="fas fa-thumbs-down"></i></div>
         </div>
-        <h2 class="comment-title"> COMMENTAIRES </h2> 
+        <h2 class="comment-title"> COMMENTAIRES </h2>
         <?php include("database.php"); ?>
         <?php
             $req = $bdd->prepare('SELECT auteur, commentaires, DATE_FORMAT(date_com, \'%d/%m/%Y à %Hh%imin%ss\') AS date_commentaire_fr  FROM commentaires WHERE id_partenaires = 2 ORDER BY date_com');
@@ -54,13 +77,13 @@
               while ($donnees = $req->fetch()){ ?>
                 <p class="comment comment-info"><strong><?php echo htmlspecialchars($donnees['auteur']); ?></strong> le <?php echo $donnees['date_commentaire_fr']; ?></p>
                 <p class="comment"><?php echo nl2br(htmlspecialchars($donnees['commentaires'])); ?></p>
-        <?php } 
+        <?php }
           $req->closeCursor();
-        ?>  
+        ?>
       </section>
     </main>
     <footer>
-      <div class="flex-footer">
+      <div class="flex-footer bg-red">
           <div class="button"><a href="../contact.html">Contact</a></div>
           <div class="button"><a href="../legal.html">Mentions légales</a></div>
         </div>

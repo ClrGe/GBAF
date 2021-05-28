@@ -1,4 +1,5 @@
 <?php
+	//détruire la session et les infos utilisateur
 	session_start();
 	if (isset($_SESSION['id']) && isset($_SESSION['username']))
 	{

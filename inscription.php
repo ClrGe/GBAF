@@ -1,5 +1,9 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+	session_start();
+}
+?>
 <!DOCTYPE html>
-<?php session_start();?>
 <html lang="fr">
     <head>
         <meta charset="utf-8">
@@ -23,10 +27,6 @@
                 elseif(strlen($_POST['pseudo'])>20){
                     echo "Votre nom d'utilisateur ne doit pas dépasser 20 caractères";
                 }
-                elseif(
-                    $req = $bdd->prepare('SELECT * FROM user WHERE username=:username')==1){
-                    echo "Ce nom d'utilisateur existe déjà";
-                }
                 elseif(empty($_POST['password'])){
                     echo "Veuillez renseigner votre mot de passe";
                 }
@@ -45,12 +45,13 @@
                 else{
                     $req = $bdd->prepare("INSERT INTO user(username, password, email, question, reponse) VALUES(:username, :password, :email, :question, :reponse)");
                     $req->execute(array(
-                        'username' => $_POST['username'],
+                        'username' => htmlspecialchars($_POST['username']),
                         'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
-                        'email' => $_POST['email'],
-                        'question' => $_POST['question'],
-                        'reponse' => $_POST['reponse'] ));
+                        'email' => htmlspecialchars($_POST['email']),
+                        'question' => htmlspecialchars($_POST['question']),
+                        'reponse' => htmlspecialchars($_POST['reponse'] )));
                     }
+                $req->closeCursor();
             }
         ?>
         <div id="connexion" class="space">
@@ -63,6 +64,10 @@
                 <div class="champs">
                     <label><b>Mot de passe</b></label><br />
                     <input type="password" placeholder="Votre mot de passe..." name="password" required><br />
+                </div>
+                <div class="champs">
+                    <label><b>Confirmer le mot de passe</b></label><br />
+                    <input type="password" placeholder="Votre mot de passe..." name="confirmPassword" required><br />
                 </div>
                 <div class="champs">
                     <label><b>Adresse Email</b><br /></label>
