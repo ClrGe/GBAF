@@ -8,6 +8,7 @@
     die();
   }
   require "database.php";
+  $req = $bdd->prepare('SELECT id, username, password, email, question, reponse FROM user WHERE id = ?');
   if(isset($_POST['username'], $_POST['password'], $_POST['email'], $_POST['question'], $_POST['reponse']))
   {
       if(empty($_POST['username'])){

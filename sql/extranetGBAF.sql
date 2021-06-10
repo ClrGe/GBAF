@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : Dim 23 mai 2021 à 23:51
+-- Généré le : jeu. 20 mai 2021 à 23:34
 -- Version du serveur :  8.0.25-0ubuntu0.21.04.1
 -- Version de PHP : 7.4.16
 
@@ -42,12 +42,12 @@ CREATE TABLE `commentaires` (
 --
 
 INSERT INTO `commentaires` (`id`, `id_user`, `id_partenaires`, `auteur`, `date_com`, `commentaires`) VALUES
-(1, 11, 1, 'Fred', '2021-05-02 14:31:02', 'Excellent service !'),
-(2, 11, 1, 'Luc', '2021-05-02 18:12:58', 'Très beau projet pour rendre accessible la formation professionnelle'),
-(3, 11, 4, 'Bullus', '2021-05-03 08:41:02', 'Jamais déçu de ce service'),
-(4, 11, 2, 'Lou', '2021-05-03 10:39:11', 'Très intéressant'),
-(5, 11, 1, 'Raptor', '2021-05-03 10:42:09', 'Toujours de bons retours de cette organisme'),
-(6, 11, 1, 'Jo', '2021-05-03 14:01:47', 'Un très beau projet porté par des gens efficaces');
+(1, 1, 1, 'Fred', '2021-05-02 14:31:02', 'Excellent service !'),
+(2, 2, 1, 'Luc', '2021-05-02 18:12:58', 'Très beau projet pour rendre accessible la formation professionnelle'),
+(3, 1, 4, 'Bullus', '2021-05-03 08:41:02', 'Jamais déçu de ce service'),
+(4, 3, 2, 'Lou', '2021-05-03 10:39:11', 'Très intéressant'),
+(5, 3, 1, 'Raptor', '2021-05-03 10:42:09', 'Toujours de bons retours de cette organisme'),
+(6, 4, 1, 'Jo', '2021-05-03 14:01:47', 'Un très beau projet porté par des gens efficaces');
 
 -- --------------------------------------------------------
 
@@ -107,8 +107,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `question`, `reponse`) VALUES
-(11, 'Fred', '$2y$10$4KgzGq2Y2S4ES25nks/.POP4XNruPLR85mf1hBQUFGImVpWWiq42C', 'fred@pqp.fr', 'Comment s\'appelait votre premier animal de compagnie ?', 'Bdlb'),
-(18, 'Claire', '$2y$10$8nHvwBeTIaJBsrtvYJ4aSeZP7eVlHi4sTzBCfrF.ENlwEE6m7YQbm', 'claire@exemple.com', 'Comment s\'appelait votre premier animal de compagnie ?', 'Pdt');
+(11, 'Fred', '$2y$10$4KgzGq2Y2S4ES25nks/.POP4XNruPLR85mf1hBQUFGImVpWWiq42C', 'fred@pqp.fr', 'Comment s\'appelait votre premier animal de compagnie ?', 'Bdlb');
 
 -- --------------------------------------------------------
 
@@ -120,8 +119,7 @@ CREATE TABLE `votes` (
   `id` int NOT NULL,
   `id_user` int NOT NULL,
   `id_partenaires` int NOT NULL,
-  `likes` int NOT NULL,
-  `dislikes` int NOT NULL
+  `votes` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -132,9 +130,7 @@ CREATE TABLE `votes` (
 -- Index pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_partenaires_commentaires` (`id_partenaires`),
-  ADD KEY `fk_user_commentaires` (`id_user`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `images`
@@ -159,8 +155,7 @@ ALTER TABLE `user`
 -- Index pour la table `votes`
 --
 ALTER TABLE `votes`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_partenaires_votes` (`id_partenaires`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -188,30 +183,13 @@ ALTER TABLE `partenaires`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `votes`
 --
 ALTER TABLE `votes`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
-
---
--- Contraintes pour les tables déchargées
---
-
---
--- Contraintes pour la table `commentaires`
---
-ALTER TABLE `commentaires`
-  ADD CONSTRAINT `fk_partenaires_commentaires` FOREIGN KEY (`id_partenaires`) REFERENCES `partenaires` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `fk_user_commentaires` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
--- Contraintes pour la table `votes`
---
-ALTER TABLE `votes`
-  ADD CONSTRAINT `fk_partenaires_votes` FOREIGN KEY (`id_partenaires`) REFERENCES `partenaires` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

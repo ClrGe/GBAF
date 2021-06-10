@@ -16,7 +16,7 @@
             <h1> MERCI ! </h1>
             <p class="champs">
                 Votre inscription a bien été prise en compte <br />
-                Vous pouvez désormais vous connecter pour profiter de nos services. <br />
+                Vous pouvez désormais vous connecter pour profiter de notre plateforme. <br />
                 <a href="connexion.php"> Se connecter </a>
             </p>
         </div>

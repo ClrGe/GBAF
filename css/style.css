@@ -13,27 +13,13 @@ body, p {
     text-align: center;
 }
 
-<<<<<<< HEAD
 h2, h3 {
 	font-size : 32px;
-=======
-h2 {
- font-size : 32px;
->>>>>>> 0af42d75c82efd3da1d5b75d4d170cd526a72f2d
 }
 
 /** LAYOUT **/
 
-.title {
-	padding: 25px;
-}
-
-.title {
-	padding-top: 70px;
-	padding-bottom: 70px;
-}
-
-main, #commentaire {
+main, #commentaire, .partner-section {
 	padding-top: 100px;
 }
 
@@ -53,6 +39,12 @@ main, #connexion {
 .suite {
 	display: block;
 	margin-left: auto;
+}
+
+.title {
+	padding: 25px;
+	padding-top: 70px;
+	padding-bottom: 70px;
 }
 
 /** HEADER / FOOTER / NAVIGATION **/
@@ -211,9 +203,10 @@ textarea {
 /** FLEX **/
 
 
-.flex-container, .flex, .flex-footer, .flex-banques {
+.flex-container, .flex-footer, .flex-banques {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 .flex-container {
@@ -320,10 +313,4 @@ textarea {
 	h1 {
 		margin-top: 50px;
 	}
-<<<<<<< HEAD
   }
-=======
-  }
-
-  
->>>>>>> 0af42d75c82efd3da1d5b75d4d170cd526a72f2d

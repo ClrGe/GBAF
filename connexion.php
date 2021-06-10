@@ -27,7 +27,7 @@
                 </div>
                 <br />
                 <a class="inscription" href="inscription.php"> Pas encore inscrit ? Cliquez ici pour <strong>créer un compte</strong></a><br />
-                <br/><a href="identification.php"> Mot de passe oublié ?</a>
+                <br/><a href="oubli.php"> Mot de passe oublié ?</a>
             </form>
         </div>
     </body>

@@ -46,59 +46,21 @@
         </div>
       </section>
         <section>
-          <h2 class="nosPart titre-blanc white">Les partenaires du GBAF</h2>
+          <h2 class="nosPart bg-red white">Les partenaires du GBAF</h2>
           <div class="partenaires flex">
-            <div>
-              <a href="partenaires/partenaire01.php"><img src="img/formation_co.png" alt="partenaire01" class="logo"></a>
-            </div>
-            <div>
-              <p class="bg-red white description">
-                Formation & Co est une association française présente sur tout le territoire.
-                Son but est de permettre à des personnes issues de tout milieu de devenir entrepreneur
-                grâce à un crédit et un accompagnement professionnel et personnalisé [...] <br />
-              </p>
-              <div><a href="partenaires/partenaire01.php" class="suite">Lire la suite...</a></div>
-            </div>
-          </div>
-          <div class="partenaires flex">
-            <div>
-              <a href="partenaires/partenaire02.php"><img src="img/protectpeople.png" alt="partenaire02" class="logo"></a>
-            </div>
-            <div>
-              <p class="bg-red white description">
-                En appliquant le principe édifié par la Sécurité Sociale française en 1945,
-                Protect People finance la solidarité nationale
-                pour permettre à chacun de bénéficier d’une protection sociale [...]<br>
-              </p>
-               <a href="partenaires/partenaire02.php" class="suite">Lire la suite...</a>
-            </div>
-          </div>
-          <div class="partenaires flex">
-            <div>
-              <a href="partenaires/partenaire03.php"><img src="img/Dsa_france.png" alt="partenaire03" class="logo"></a>
-            </div>
-            <div>
-              <p class="bg-red white description">
-                DSA-France accélère la croissance du territoire
-                et s’engage avec les collectivités territoriales pour
-                accompagner les entreprises dans les étapes clés de leur évolution[...]<br />
-              </p>
-              <a href="partenaires/partenaire03.php" class="suite">Lire la suite...</a>
-            </div>
-          </div>
-          <div class="partenaires flex">
-            <div>
-              <a href="partenaires/partenaire04.php"><img src="img/CDE.png" alt="partenaire04" class="logo"></a>
-            </div>
-            <div>
-              <p class="bg-red white description">
-                La Chambre Des Entrepreneurs (CDE) accompagne les entreprises
-                dans leurs démarches de formations. Son président est élu pour 3 ans par ses pairs [...]<br />
-              </p>
-              <a href="partenaires/partenaire04.php" class="suite">Lire la suite...</a>
-            </div>
-          </div>
-        </section>
-      </main>
-    <?php require "footer.php";?>
+          <?php
+						$req = $bdd->prepare('SELECT id, nom, description, logo, vignette FROM partenaires ORDER BY id');
+            $req->execute(array($_GET['partenaires']));
+            while ($donnees = $req->fetch()){
+            '<div class="partenaires flex">';
+            echo '<div><img src="img/partenaires/' . htmlspecialchars($donnees['vignette']) . '" alt="Logo ' . htmlspecialchars($donnees['nom']) .  '" class="logo"/></div>';
+            echo '<div><p class="bg-red white description">' . substr(htmlspecialchars($donnees['description']), 0, strpos(htmlspecialchars($donnees['description']), ".", 1) + 1) . ' [...]</p></div>';
+            echo '<div><a class="suite" href="partenaires.php?id=' . $donnees['id'] . '">Afficher la suite ></a></div>';
+            echo '';}
+            '</div>';
+          $reponse->closeCursor();
+        ?>
+        </div>
+      </section>
+      <?php require "footer.php";?>
 </html>

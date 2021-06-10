@@ -4,10 +4,10 @@
   }
   // le visiteur doit être connecté pour accéder au contenu
   if (!isset($_SESSION['id'])) {
-    header('Location: ../connexion.php');
+    header('Location: connexion.php');
     die();
   }
-  require "../database.php";
+  require "database.php";
 ?>
 
 <!DOCTYPE html>
@@ -16,8 +16,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header id="header" class="border">
@@ -27,8 +27,8 @@
           ?>
           <p>
             <li class="black settings"><strong><?php echo $_SESSION['username'] . ' '; ?></strong> </li>
-            <li class="black settings"><a class="black" href="../parametres.php"><i></i>Paramètres du compte</a></li>
-            <li class="black settings"><a class="black" href="../deconnexion.php"><i></i>Deconnexion</a></li>
+            <li class="black settings"><a class="black" href="parametres.php"><i></i>Paramètres du compte</a></li>
+            <li class="black settings"><a class="black" href="deconnexion.php"><i></i>Deconnexion</a></li>
           </p>
           <?php
           } else {
@@ -38,7 +38,7 @@
           }
           ?>
         </ul>
-        <a href="../index.php"><img src="../img/logo.png" alt="GBAF" class="gbaf"></a>
+        <a href="index.php"><img src="img/logo.png" alt="GBAF" class="gbaf"></a>
     </header>
     <main>
       <h4> Donnez votre avis sur cet organisme et les services proposés en postant un commentaire !</h4> <br />
@@ -50,12 +50,12 @@
         <br /><textarea id="commentaires" rows="3" placeholder="Écrivez ici votre commentaire..." name="commentaires" required></textarea>
         <input type="submit" name="publier" value="Publier">
       </form>
-      <a href="../index.php"><em>Retour à l'accueil></em></a>
+      <a href="index.php"><em>Retour à l'accueil></em></a>
     </main>
     <footer>
       <div class="flex-footer bg-red">
-          <div class="button"><a href="../contact.html">Contact</a></div>
-          <div class="button"><a href="../legal.html">Mentions légales</a></div>
+          <div class="button"><a href="contact.html">Contact</a></div>
+          <div class="button"><a href="legal.html">Mentions légales</a></div>
         </div>
     </footer>
 </html>

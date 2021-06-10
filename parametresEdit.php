@@ -36,7 +36,3 @@
         header('Location: parametres.php');
     }
 ?>
-//if password = result
-verifier mdp en 2 fois
-et non vide
-en 1 fichier pour in

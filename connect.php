@@ -20,5 +20,5 @@
 			}
 		}
 	}
-header('Location: connexion.php?connexion=0');
+	header('Location: connexion.php?connexion=0');
 ?>
