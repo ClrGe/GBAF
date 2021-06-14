@@ -1,6 +1,15 @@
-<?php 
-    require "../templates/head.php";
-    require "..templates/header.php"; 
+<?php
+  if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+  }
+  // le visiteur doit être connecté pour accéder au contenu
+  if (!isset($_SESSION['id'])) {
+    header('Location: connexion.php');
+    die();
+  }
+  require "..templates/database.php";
+  require "../templates/head.php";
+  require "..templates/header.php"; 
 ?>
 <h2>Informations légales</h2>
 <h3>1. Présentation du site.</h3>
