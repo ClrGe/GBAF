@@ -2,24 +2,14 @@
 if (session_status() == PHP_SESSION_NONE) {
 	session_start();
 }
+require "templates/head.php";
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>GBAF</title>
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
         <header>
             <img src="img/logo.png" alt="GBAF">
         </header>
         <?php
-            require "database.php";
-            if(isset($_POST['username'], $_POST['password'], $_POST['email'], $_POST['question'], $_POST['reponse']))
+            require "templates/database.php";
+            if(isset($_POST['username'], $_POST['password'], $_POST['prenom'],  $_POST['nom'], $_POST['question'], $_POST['reponse']))
             {
                 if(empty($_POST['username'])){
                     echo "Veuillez renseigner votre nom d'utilisateur";
@@ -36,25 +26,31 @@ if (session_status() == PHP_SESSION_NONE) {
                 elseif(strlen($_POST['password'])<6){
                     echo "Votre mot de passe doit comporter au moins 6 caractères";
                 }
-                elseif(empty($_POST['email'])){
-                    echo "Veuillez renseigner votre adresse e-mail";
+                elseif(empty($_POST['prenom'])){
+                    echo "Veuillez renseigner votre adresse prénom";
+                }
+                elseif(empty($_POST['nom'])){
+                    echo "Veuillez renseigner votre adresse nom";
                 }
                 elseif(empty($_POST['reponse'])){
                     echo "Veuillez répondre à la question secrète";
                 }
                 else{
-                    $req = $bdd->prepare("INSERT INTO user(username, password, email, question, reponse) VALUES(:username, :password, :email, :question, :reponse)");
+                    $req = $bdd->prepare("INSERT INTO user(username, password, prenom, nom, question, reponse) VALUES(:username, :password, :prenom, :nom, :question, :reponse)");
                     $req->execute(array(
                         'username' => htmlspecialchars($_POST['username']),
                         'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
-                        'email' => htmlspecialchars($_POST['email']),
+                        'prenom' => htmlspecialchars($_POST['prenom']),
+                        'nom' => htmlspecialchars($_POST['nom']),
                         'question' => htmlspecialchars($_POST['question']),
                         'reponse' => htmlspecialchars($_POST['reponse'] )));
+                    header('Location: redirection.php');
+                    die();
                     }
                 $req->closeCursor();
             }
         ?>
-        <div id="connexion" class="space">
+        <div id="connexion">
             <form class="formConnexion" action="inscription.php" method="post">
                 <h1 class="white">CRÉER UN COMPTE</h1>
                 <div class="champs">
@@ -62,16 +58,20 @@ if (session_status() == PHP_SESSION_NONE) {
                     <input type="text" placeholder="Votre identifiant..." name="username" required><br />
                 </div>
                 <div class="champs">
+                    <label><b>Prénom</b><br /></label>
+                    <input type="text" placeholder="Votre prénom..." name="prenom" required><br />
+                </div>
+                <div class="champs">
+                    <label><b>Nom de famille</b><br /></label>
+                    <input type="text" placeholder="Votre nom..." name="nom" required><br />
+                </div>
+                <div class="champs">
                     <label><b>Mot de passe</b></label><br />
                     <input type="password" placeholder="Votre mot de passe..." name="password" required><br />
                 </div>
                 <div class="champs">
                     <label><b>Confirmer le mot de passe</b></label><br />
-                    <input type="password" placeholder="Votre mot de passe..." name="confirmPassword" required><br />
-                </div>
-                <div class="champs">
-                    <label><b>Adresse Email</b><br /></label>
-                    <input type="text" placeholder="Votre adresse email..." name="email" required><br />
+                    <input type="password" placeholder="Confirmez votre mot de passe..." name="confirmPassword" required><br />
                 </div>
                 <div class="champs">
                     <label><b>Question secrète</b><br /></label>
