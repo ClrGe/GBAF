@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-<?php require "header.php"; ?>
+<?php 
+    require "../templates/head.php";
+    require "..templates/header.php"; 
+?>
 <h2>Informations légales</h2>
 <h3>1. Présentation du site.</h3>
 <p>En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site <a href="//extranetGBAF/">extranetGBAF</a> l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi :</p>
