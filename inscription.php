@@ -4,13 +4,10 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 require "templates/head.php";
 ?>
-        <header>
-            <img src="img/logo.png" alt="GBAF">
-        </header>
+    <header><img src="img/logo.png" alt="GBAF"></header>
         <?php
             require "templates/database.php";
-            if(isset($_POST['username'], $_POST['password'], $_POST['prenom'],  $_POST['nom'], $_POST['question'], $_POST['reponse']))
-            {
+            if(isset($_POST['username'], $_POST['password'], $_POST['prenom'],  $_POST['nom'], $_POST['question'], $_POST['reponse'])){
                 if(empty($_POST['username'])){
                     echo "Veuillez renseigner votre nom d'utilisateur";
                 }
@@ -27,10 +24,10 @@ require "templates/head.php";
                     echo "Votre mot de passe doit comporter au moins 6 caractères";
                 }
                 elseif(empty($_POST['prenom'])){
-                    echo "Veuillez renseigner votre adresse prénom";
+                    echo "Veuillez renseigner votre prénom";
                 }
                 elseif(empty($_POST['nom'])){
-                    echo "Veuillez renseigner votre adresse nom";
+                    echo "Veuillez renseigner votre nom";
                 }
                 elseif(empty($_POST['reponse'])){
                     echo "Veuillez répondre à la question secrète";
@@ -46,7 +43,7 @@ require "templates/head.php";
                         'reponse' => htmlspecialchars($_POST['reponse'] )));
                     header('Location: redirection.php');
                     die();
-                    }
+                }
                 $req->closeCursor();
             }
         ?>
@@ -54,15 +51,15 @@ require "templates/head.php";
             <form class="formConnexion" action="inscription.php" method="post">
                 <h1 class="white">CRÉER UN COMPTE</h1>
                 <div class="champs">
-                    <label><b>Nom d'utilisateur</b><br /></label>
-                    <input type="text" placeholder="Votre identifiant..." name="username" required><br />
+                <label><b>Nom d'utilisateur</b><br /></label>
+                <input type="text" placeholder="Votre identifiant..." name="username" required><br />
                 </div>
                 <div class="champs">
-                    <label><b>Prénom</b><br /></label>
-                    <input type="text" placeholder="Votre prénom..." name="prenom" required><br />
+                <label><b>Prénom</b><br /></label>
+                <input type="text" placeholder="Votre prénom..." name="prenom" required><br />
                 </div>
                 <div class="champs">
-                    <label><b>Nom de famille</b><br /></label>
+                <label><b>Nom de famille</b><br /></label>
                     <input type="text" placeholder="Votre nom..." name="nom" required><br />
                 </div>
                 <div class="champs">
