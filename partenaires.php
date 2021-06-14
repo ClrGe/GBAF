@@ -1,29 +1,29 @@
 <?php
   if (session_status() == PHP_SESSION_NONE) { // paramètres de session
-  session_start();
+    session_start();
   }
   if (!isset($_SESSION['id'])) {
-  header('Location: connexion.php'); // verifier la connexion ; sinon renvoi vers la page d'identification
-  die();
+    header('Location: connexion.php'); // verifier la connexion ; sinon renvoi vers la page d'identification
+    die();
   }
-//récupérer les infos du partenaires dans la bdd
+  //récupérer les infos du partenaires dans la bdd
   require "templates/database.php";
   if (isset($_GET['id'])){
     $id_partenaires = $_GET['id'];
     $req = $bdd->prepare('SELECT id, nom, description, logo FROM partenaires WHERE id = :id_partenaires'); // récupérer le partenaire
     $req->execute(array(
-    'id_partenaires' => $id_partenaires));
+      'id_partenaires' => $id_partenaires));
   }
 $req->execute(array($_GET['partenaires']));
-//préparer l'espace commentaires
-// vérification variables $_POST
+  //préparer l'espace commentaires
+  // vérification variables $_POST
 if (isset($_POST['id_user']) && isset($_POST['id_partenaires']) && isset($_POST['commentaires'])) {
     $id_user = $_POST['id_user'];
     $id_partenaires = $_POST['id_partenaires'];
-	$commentaires = htmlspecialchars($_POST['commentaires']);
-	// verser dans la bdd
-	$req = $bdd->prepare('INSERT INTO commentaires(id_user, id_partenaires, date_com, commentaires) VALUES (?, ?, NOW(), ?)');
-	$req->execute(array(
+	  $commentaires = htmlspecialchars($_POST['commentaires']);
+	  // verser dans la bdd
+	  $req = $bdd->prepare('INSERT INTO commentaires(id_user, id_partenaires, date_com, commentaires) VALUES (?, ?, NOW(), ?)');
+	  $req->execute(array(
 		$id_user => htmlspecialchars($_POST['id_user']),
 		$id_partenaires = htmlspecialchars($_POST['id_partenaires']),
         $commentaires = htmlspecialchars($_POST['commentaires'])));
@@ -34,18 +34,44 @@ if (isset($_POST['id_user']) && isset($_POST['id_partenaires']) && isset($_POST[
   //afficher les templates
   require "templates/head.php";
   require "templates/header.php";
-?>
+  ?>
   <div class="partner-section bg-red">
-    <?php while ($result = $req->fetch()){
-      // afficher les données du partenaire
-        echo '<div><img src="img/partenaires/' . htmlspecialchars($result['logo']) . '" alt="Logo ' . htmlspecialchars($result['nom']) . '" class="pub"/></div>';
-        echo '<p class="large-txt white bold center">' . htmlspecialchars($result['description']) . '</p>';
-    }?>
+  <?php while ($result = $req->fetch()){
+    // afficher les données du partenaire
+    echo '<div><img src="img/partenaires/' . htmlspecialchars($result['logo']) . '" alt="Logo ' . htmlspecialchars($result['nom']) . '" class="pub"/></div>';
+    echo '<p class="large-txt white bold center">' . htmlspecialchars($result['description']) . '</p>';
+  }?>
   </div>
   <div class="comment-section"><hr>
+  <?php 
+    $calc = $bdd->prepare('SELECT id_user, id_partenaires, votes FROM votes WHERE id_partenaires = ?');
+    // Récupérer le total des likes/dislikes pour les afficher
+    $calc->execute(array($id_partenaires));
+    $likes = 0; $dislikes = 0;
+    while ($votes = $calc->fetch()) {
+      if ($votes['votes'] == 'like') {
+        $likes++;
+        if ($votes['id_user'] == $_SESSION['id_user']) {
+          //trouver si l'utilisateur a déjà voté
+          $liked = "liked";
+        }
+      } else if ($votes['votes'] == 'dislike') {
+        $dislikes++;
+        if ($votes['id_user'] == $_SESSION['id_user']) {
+          $disliked = "disliked";
+        }
+      }
+    }
+    $rep->closeCursor();
+    $req = $bdd->prepare('SELECT * FROM commentaires WHERE id_partenaires = ?');
+		$req->execute(array($id_partenaires));
+		$msg = $req->fetch();
+		$totalMsg = $req->rowCount();
+		$req->closeCursor();
+  ?>
     <div class="flex-container">
-      <?php echo '<div class="button red"><i class="fas fa-thumbs-up"></i><a href="votes.php?votes=like&id=' . $id_partenaires . '" class="button"> J\'AIME</a></div>';
-      echo '<div class="button red"><i class="fas fa-thumbs-down"></i><a href="partenaires.php?id=' . $id_partenaires . '" class="button"> JE N\'AIME PAS</a></div>';?>
+      <?php echo '<div class="button red"><i class="fas fa-thumbs-up"></i><a href="votes.php?votes=like&id=' . $id_partenaires . '" class="button"> J\'AIME '; echo $likes; '</a></div>';
+      echo '<div class="button red"><i class="fas fa-thumbs-down"></i><a href="votes.php?votes=dislike&id=' . $id_partenaires . '" class="button"> JE N\'AIME PAS '; echo $dislikes; '</a></div>';?>
     </div><hr>
     <h2 class="comment-title big center red"><i class="fas fa-comments"></i> COMMENTAIRES </h2>
     <div class="post-comment">
