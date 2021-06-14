@@ -7,20 +7,10 @@
     header('Location: connexion.php');
     die();
   }
-  require "database.php";
+  require "..templates/database.php";
+  require "../templates/head.php";
+  require "..templates/header.php"; 
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GBAF</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <?php require "header.php";?>
     <main>
       <!--  Formulaire de contact du GBAF (cf footer) -->
       <h2 class="titre-blanc">NOUS CONTACTER</h2>
