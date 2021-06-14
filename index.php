@@ -37,19 +37,17 @@
         <div>
           <h2 class="nosPart large white bg-red center">LES PARTENAIRES DU GBAF</h2>
           <div class="partenaires flex bg-red">
-          <?php
-						$req = $bdd->prepare('SELECT id, nom, description, logo, vignette FROM partenaires ORDER BY id');
-            $req->execute(array($_GET['partenaires']));
-            while ($donnees = $req->fetch()){
-            '<div class="partenaires flex">';
-            echo '<div class="flex-block"><img src="img/partenaires/' . htmlspecialchars($donnees['vignette']) . '" alt="Logo ' . htmlspecialchars($donnees['nom']) .  '" class="logo"/></div>';
-            echo '<div class="flex-block"><p class="white description">' . substr(htmlspecialchars($donnees['description']), 0, strpos(htmlspecialchars($donnees['description']), ".", 1) + 1) . ' [...]</p></div>';
-            echo '<div class="flex-block"><a class="suite" href="partenaires.php?id=' . $donnees['id'] . '">Afficher la suite ></a></div>';
-            echo '<hr>';}
-            '</div>';
-        ?>
-        </div>
+          	<?php
+		    $req = $bdd->prepare('SELECT id, nom, description, logo, vignette FROM partenaires ORDER BY id');
+		    $req->execute(array($_GET['partenaires']));
+		    while ($donnees = $req->fetch()){
+		    '<div class="partenaires flex">';
+		    echo '<div class="flex-block"><img src="img/partenaires/' . htmlspecialchars($donnees['vignette']) . '" alt="Logo ' . htmlspecialchars($donnees['nom']) .  '" class="logo"/></div>';
+		    echo '<div class="flex-block"><p class="white description">' . substr(htmlspecialchars($donnees['description']), 0, strpos(htmlspecialchars($donnees['description']), ".", 1) + 1) . ' [...]</p></div>';
+		    echo '<div class="flex-block"><a class="suite" href="partenaires.php?id=' . $donnees['id'] . '">Afficher la suite ></a></div>';
+		    echo '<hr>';}
+		    '</div>';
+        	?>
+	</div>
       </div>
-  <?php require "templates/footer.php";
-            $donnees->closeCursor();
-            ?>
+  <?php require "templates/footer.php"; $donnees->closeCursor();?>
