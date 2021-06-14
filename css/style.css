@@ -1,30 +1,126 @@
 /** GENERAL SETTINGS **/
 
 html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/** FONTS **/
+
+body, h1, h2, h3, p, a, li, ul {
     font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-body, p {
-	text-align: justify;
-	margin: 0px;
+h1, .title, .large, .compte{
+	font-size: 44px;
 }
 
-.center, .formConnexion, .accueilLink, .inscription, .white, .title {
+h2, .big {
+	font-size: 28px;
+}
+
+h3, .large-txt, .comment {
+	font-size: 20px;
+}
+
+h1, h2, h3, .center, .formConnexion, .inscription, .title {
     text-align: center;
 }
 
-h2, h3 {
-	font-size : 32px;
+h1, .nosPart, .title, .comment-title, .compte {
+	text-decoration: underline overline;
+}
+
+a, .bold, .description {
+	font-weight: bold;
+}
+
+.suite, .comment, .comment-info {
+	font-style: italic;
+	}
+
+li, .settings, .black, a {
+	list-style-type: none;
+	text-decoration: none;
+}
+
+.suite, .settings {
+	text-align: right;
+}
+
+.large-txt {
+	display: block;
+	padding-bottom: 2%;
+	margin-left: 30%;
+	margin-right: 30%;
+	text-align: justify;
+	line-height: 2;
+}
+
+/** COLORS **/
+
+body, .bg-white, textarea, .logo, .nosPart, #header {
+    background-color: white;
+}
+
+.bg-red, #connexion, .parametres{
+	background-color: rgba(150, 0, 0, 0.8);
+}
+
+.bg-black, .publish:hover {
+	background-color: black;
+}
+
+.black, h3:hover, a:hover, h1:hover, li, .footer, .legal, .suite, .button:hover, .comment-title:hover, .nosPart:hover {
+    color: black;
+}
+
+.white, .champs, .nosPart, .inscription, .suite:hover {
+    color: white;
+}
+
+.services, li:hover, .settings, .red, .button {
+	color:rgba(150, 0, 0, 0.8);
+}
+
+.formConnexion {
+	background-color: transparent;
+}
+
+/** SHADOWS / BORDERS **/
+
+h1, .title, .compte {
+	text-shadow: 0px 0px 25px black;
+}
+
+#header, .pub, .flex, .nosPart {
+	box-shadow: 0px 0px 25px black;
+}
+
+header, .border, .gbaf {
+	border-bottom: 1px solid black;
+}
+
+.pub-partenaire, .flex-banques {
+	border: 25px solid rgba(150, 0, 0, 0.8);
 }
 
 /** LAYOUT **/
 
-main, #commentaire, .partner-section {
-	padding-top: 100px;
+header {
+    position: fixed;
+	width: 100%;
+	height: 120px;
+	top: 0;
 }
 
-.pub, .partenaires {
-	padding-top: 20px;
+.container, #commentaire, .partner-section, .title, .comment-title, .compte {
+	padding-top: 100px;
 }
 
 #title, .comment {
@@ -32,79 +128,30 @@ main, #commentaire, .partner-section {
 	padding-left: 150px;
 }
 
-main, #connexion {
-	padding-bottom: 20px;
+#connexion, .post-comment {
+	padding-bottom: 50px;
 }
 
-.suite {
+.suite, img {
 	display: block;
 	margin-left: auto;
 }
 
 .title {
-	padding: 25px;
-	padding-top: 70px;
-	padding-bottom: 70px;
-}
-
-/** HEADER / FOOTER / NAVIGATION **/
-
-#header {
-    position: fixed;
-	width: 100%;
-	height: 120px;
-}
-
-.settings, .black {
-	font-size: small;
-	list-style-type: none;
+	padding-bottom: 100px;
 }
 
 .settings {
-	text-align: right;
 	float: right;
 }
 
-.border, .gbaf {
-	border-bottom: 1px solid black;
+.description {
+	padding: 40px;
 }
 
-.big{
-	font-size: x-large;
-}
-
-/** COLORS **/
-
-html, textarea, .logo {
-    background-color: white;
-}
-
-#header {
-	background-color: rgba(255, 255, 255, 0.9);
-}
-
-.formConnexion {
-	background-color: rgba(255, 255, 255, 0);
-}
-
-a, .white, .champs, .nosPart, .comment-title, .inscription {
-    color: white;
-}
-
-h3, a, .accueilLink, .navUser, .settings, .black, h3:hover, a:hover, h1:hover, li, .footer, .legal, .suite, .comment, .button:hover {
-    color: black;
-}
-
-.services, li:hover, .button {
-	color:rgba(150, 0, 0, 0.8);
-}
-
-#connexion, .bg-red, .nosPart, .parametres{
-	background-color: rgba(150, 0, 0, 0.8);
-}
-
-.comment-title {
-	background-color: black;
+.settings {
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 /** IMAGES **/
@@ -126,21 +173,19 @@ img.gbaf {
 .logo {
 	width: 400px;
 	height: auto;
+	border: 5px solid black;
+	float: left;
+	margin-right: 45px;
+	margin-top: 25px;
 }
 
 img {
 	display: block;
-	margin-left: auto;
 	margin-right: auto;
 }
 
 .banque {
 	width: 150px;
-}
-
-.settings {
-	padding-left: 15px;
-	padding-right: 15px;
 }
 
 /** CONNECT / COMMENT **/
@@ -157,79 +202,68 @@ img {
 	margin-bottom: 2%;
 }
 
-textarea {
+.commArea {
 	display: block;
 	width: 100%;
-	height: 250px;
-}
-
-.comment-section {
-	padding-top: 100px;
+	height: 150px;
+	background-color: lightgray;
 }
 
 .comment-info {
-	font-style: italic;
 	padding-left:25px;
-	padding-top: 25px;
 	font-size: small;
 }
 
-.bold {
-	font-size: large;
-	font-weight: bold;
+.comment-info, .connect-link {
+padding-top: 25px;
 }
 
-/** ACTEURS / PARTENAIRES **/
+.publish {
+	float: right;
+	width: 90%;
+	margin-right: 5%;
+}
 
 .nosPart {
+	margin-top: 50px;
 	padding: 50px;
 }
 
-.partenaires{
-	padding: 20px;
-}
-
-.description {
-	font-weight: bold;
-	padding: 40px;
-}
-
-.suite {
-	text-align: right;
-	font-style: italic;
-}
-
-
 /** FLEX **/
 
-
-.flex-container, .flex-footer, .flex-banques {
+.flex-container, .flex-footer, .flex-banques, .comment-button {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+}
+
+.flex-footer, .comment-button {
+	justify-content: center;
 }
 
 .flex-container {
 	justify-content: flex-end
 }
 
-.flex-footer {
-	justify-content: center;
-}
-
 .flex-banques {
 	justify-content: space-around;
-	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-top: 15px;
 }
 
 .button {
 	margin: 10px;
 }
 
+.description {
+	padding-top: 80px;
+}
+
+.flex-block{
+	margin-left: 60px;
+	margin-right: 100px;
+}
 
 /** RESPONSIVE **/
-
 
 @media (min-width:992px) {
     .desktop-only {
@@ -246,12 +280,12 @@ textarea {
 	.desktop-only {
         display:none;
     }
-    
-	html, body, img.logo, li, ul, #connexion, .flex-banques, .black {
+
+	html, body, img.logo, li, ul, #connexion, .flex-banques, .black, .partenaires {
 		width: 100%;
 	}
 
-	.settings, .black{
+	.settings, .black, .partenaires{
 		display: block;
 		padding-right:10px;
 	}
@@ -283,16 +317,16 @@ textarea {
 	.mobile-only {
         display:block;
     }
- 
+
     .desktop-only {
         display:none;
     }
 
-	html, body, img.logo, li, ul, #connexion, .flex-banques {
+	html, body, img.logo, li, ul, #connexion, .flex-banques, .black, .partenaires, .large-txt {
 		width: 100%;
 	}
 
-	.listeActeurs, ul, li, .flex-banques, h1 {
+	.listeActeurs, ul, li, .flex-banques, h1, .partenaires, .black, .large-txt {
 		margin: 0%;
 		padding: 0%;
 		list-style: none;
