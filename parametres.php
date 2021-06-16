@@ -66,23 +66,18 @@ if (isset($_POST['id']) && isset($_POST['username'])  && isset($_POST['prenom'])
         $req->closeCursor();
     }
 }
-    session_start();
-    $_SESSION['id'] = $username;
-	$_SESSION['prenom'] = $prenom;
-	$_SESSION['nom'] = $nom;
-
         require "templates/head.php";
         require "templates/header.php";
     ?>
         <div>
             <form class="formConnexion parametres" action="parametres.php" method="post">
                 <h1 class="black compte">Mon compte</h1>
-                <a href="index.php" class="white">Retour</a>
+                <a href="index.php" class="white">Retour</a><hr>
                 <div class="champs">
                     <input type="hidden" name="id_user" value="<?php echo $resultat['id_user']; ?>">
                 </div>
                 <div class="champs">
-                    <label for="username"><b>Nom d'utilisateur</b><br /></label>
+                    <label for="username"><b></b><br /></label>
                     <br /><h3 class="black"><?php echo $resultat['username'] . ' '; ?></h3>
                 </div>
                 <div class="champs">
@@ -94,16 +89,13 @@ if (isset($_POST['id']) && isset($_POST['username'])  && isset($_POST['prenom'])
                     <input type="text" value='<?php echo $resultat['nom'] ?>' name="nom" required><br />
                 </div>
                 <div class="champs">
-                    <label for="password"><b>Mot de passe</b></label><br />
-                    <input type="password" value='<?php echo $resultat['password'] ?>' name="password" id="password" required><br/>
-                </div>
-                <div class="champs">
-                    <label for="confirmPassword"><b>Confirmer le mot de passe</b></label><br />
-                    <input type="password" value='<?php echo $resultat['password'] ?>' name="confirmPassword" required><br />
-                </div>
-                <div class="champs">
                     <label for="question"><b>Question secrète</b><br /></label>
-                    <?php echo $resultat['question'] ?>
+                    <select name="question">
+                        <option>Quel est votre plat préféré ?</option>
+                        <option>Comment s'appelait votre premier animal de compagnie ?</option>
+                        <option>Quelle est votre destination de voyage de rêve ?</option>
+                        <option>Dans quelle ville votre père est-il né ?</option>
+                    </select>
                 </div>
                 <div class="champs">
                     <label for="reponse"><b>Réponse</b><br /></label>
